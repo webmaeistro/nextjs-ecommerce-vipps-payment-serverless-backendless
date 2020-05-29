@@ -1,13 +1,13 @@
 {
-  "name": "crystallize-nextjs-boilerplate",
-  "version": "5.0.0",
+  "name": "nextjs-ornforlag-vipps-v2",
+  "version": "1.0.0",
   "license": "MIT",
   "engines": {
     "node": ">=10.10"
   },
   "repository": {
-    "url": "git@github.com:CrystallizeAPI/crystallize-nextjs-boilerplate.git",
-    "type": "git"
+    "url": "https://github.com/webmaeistro/nextjs-ornforlag-vipps-v2.git",
+    "type": "git+https"
   },
   "scripts": {
     "dev": "next dev",

@@ -73,4 +73,7 @@ typings/
 # Yarn lock file
 yarn.lock
 
+#dotenv files
 .env
+.env.*
+.env*
