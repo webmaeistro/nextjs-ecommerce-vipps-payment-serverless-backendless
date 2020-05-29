@@ -24,6 +24,7 @@ const Inner = styled.div`
 `;
 
 const BillingDetails = ({ order }) => {
+  // eslint-disable-next-line no-unused-vars
   const { email } = order.customer.addresses;
   return (
     <Outer>
