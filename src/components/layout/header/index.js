@@ -25,7 +25,7 @@ export default function Header({ simple }) {
       </Link>
       <Nav open={navOpen}>
         <NavList>
-          {mainNavigation.map(category => (
+          {mainNavigation.map((category) => (
             <NavListItem key={category.path}>
               <Link as={category.path} href="/[...catalogue]">
                 <a onClick={() => setNavOpen(false)}>{category.name}</a>
@@ -35,7 +35,7 @@ export default function Header({ simple }) {
         </NavList>
       </Nav>
       <NavActions open={navOpen}>
-        {auth.isLoggedIn ? (
+        {/*      {auth.isLoggedIn ? (
           <button type="button" onClick={auth.logout}>
             Logout
           </button>
@@ -44,6 +44,7 @@ export default function Header({ simple }) {
             <a>Login</a>
           </Link>
         )}
+        */}
       </NavActions>
       <BasketButton />
       <BurgerButton active={navOpen} onClick={() => setNavOpen(!navOpen)} />

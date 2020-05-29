@@ -32,7 +32,7 @@ export default function Confirmation({ order: orderData }) {
   }, [emptied, basket.actions]);
 
   const order = orderData.data.orders.get;
-  const { email } = order.customer.addresses[0];
+  // const { email } = order.customer.addresses;
 
   const items = order.cart.map((item) => ({
     ...item,
@@ -46,15 +46,16 @@ export default function Confirmation({ order: orderData }) {
     <Layout title="Order Summary">
       <Outer>
         <CustomHeader>
-          <H1>Order Summary</H1>
+          <H1>Betaling gjennomført!</H1>
           <p>
-            Your order has been confirmed. A copy of your order has been sent to{' '}
-            <strong>{email}</strong>.
+            Takk for kjøpet og ha en flott dag videre. Hvis du ønsker en kopi av
+            denne kviteringen ta et skjermbilde eller print ut siden. Kjøpet er
+            også lagret i historikk i betalinger på din Vipps App.
           </p>
           <Line />
           <BillingDetails order={order} />
           <Line />
-          <H3>Order Items</H3>
+          <H3>Bok liste spesifisert</H3>
           <OrderItems items={items} />
         </CustomHeader>
       </Outer>

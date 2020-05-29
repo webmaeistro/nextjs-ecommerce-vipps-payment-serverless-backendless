@@ -75,8 +75,8 @@ export default async function sendOrderConfirmation(orderId) {
       sgMail.setApiKey(SENDGRID_API_KEY);
       await sgMail.send({
         to: email,
-        from: 'example@crystallize.com',
-        subject: 'Order Summary',
+        from: 'bjorn@ornforlag.no',
+        subject: 'Bok transaksjons kvitering fra ornforlag.no',
         html,
       });
     }

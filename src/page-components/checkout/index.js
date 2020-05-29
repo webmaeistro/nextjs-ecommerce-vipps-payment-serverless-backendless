@@ -22,18 +22,18 @@ const Checkout = () => {
   const { currency } = settings;
 
   if (!items.length) {
-    return <Outer>Basket is empty</Outer>;
+    return <Outer>Hurtigkurven er tom</Outer>;
   }
 
   return (
     <Outer>
       <Inner>
         <Container>
-          <SectionHeader>Checkout</SectionHeader>
+          <SectionHeader>VippsHurtigkasse</SectionHeader>
           <PaymentGateway items={items} currency={currency} />
         </Container>
         <Container>
-          <SectionHeader>Basket</SectionHeader>
+          <SectionHeader>Hurtigkurv</SectionHeader>
           <OrderItems items={items} currency={currency} />
         </Container>
       </Inner>

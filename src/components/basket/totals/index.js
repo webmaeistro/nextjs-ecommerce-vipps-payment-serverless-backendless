@@ -15,14 +15,14 @@ export const Totals = () => {
     totalToPay,
     totalVatAmount,
     shipping,
-    freeShipping
+    freeShipping,
   } = state;
 
   return (
     <Outer>
       <Rows>
         <Row modifier="total-price">
-          <span>Total price:</span>
+          <span>Totale prisen:</span>
           <span>
             <CurrencyValue value={totalPrice} />
           </span>
@@ -30,13 +30,13 @@ export const Totals = () => {
         {discount && (
           <>
             <Row modifier="discount">
-              <span>Discount:</span>
+              <span>Rabbatt:</span>
               <span>
                 <CurrencyValue value={discount} />
               </span>
             </Row>
             <Row modifier="total-after-discount">
-              <span>Total after discount:</span>
+              <span>Totalen etter rabbaten:</span>
               <span>
                 <CurrencyValue value={totalPriceMinusDiscount} />
               </span>
@@ -52,7 +52,7 @@ export const Totals = () => {
                   <CurrencyValue value={shipping.unit_price} />
                 </StrikeThrough>
               )}{' '}
-              <CurrencyValue value="0" />
+              <CurrencyValue value="59" />
             </span>
           ) : (
             <span>
@@ -68,7 +68,7 @@ export const Totals = () => {
           </span>
         </Row>
         <Row modifier="to-pay">
-          <span>To pay:</span>
+          <span>Total SUM å betalte:</span>
           <span>
             <CurrencyValue value={totalToPay} />
           </span>

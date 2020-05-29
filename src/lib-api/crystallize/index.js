@@ -3,7 +3,7 @@ function callApi(apiName) {
     const response = await fetch(
       apiName === 'orders'
         ? `https://api.crystallize.com/${process.env.NEXT_PUBLIC_CRYSTALLIZE_TENANT_ID}/${apiName}`
-        : 'https://pim-dev.crystallize.digital/graph/core',
+        : 'https://pim.crystallize.com/graph/core',
       {
         method: 'POST',
         headers: {

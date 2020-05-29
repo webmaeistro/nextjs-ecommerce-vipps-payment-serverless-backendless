@@ -24,22 +24,23 @@ const Inner = styled.div`
 `;
 
 const BillingDetails = ({ order }) => {
-  const { email } = order.customer.addresses[0];
+  const { email } = order.customer.addresses;
   return (
     <Outer>
       <Inner>
-        <H3>Billing Details</H3>
+        <H3>Salgs kvitering</H3>
         <p>
-          Name:{' '}
+          Navn:{' '}
           <strong>
             {order.customer.firstName} {order.customer.lastName}
           </strong>
         </p>
         <p>
-          Email: <strong>{email}</strong>
+          Epost: <strong>{order.customer.email}</strong>
         </p>
+        Leverings addresse: {order.customer.address}
         <p>
-          Total:{' '}
+          SUM totalt:{' '}
           <strong>
             <CurrencyValue value={order.total.net} />
           </strong>
