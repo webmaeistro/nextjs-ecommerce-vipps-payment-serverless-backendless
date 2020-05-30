@@ -55,9 +55,9 @@ export default class PaymentGateway extends React.Component {
     return (
       <Inner>
         <Form noValidate>
-          <Row>Vi i Ørn forlag støtter kunn Vipps betalings system.</Row>
+          <Row>Husk å påse leverings addressen</Row>
           <Row>
-            Spørsmål eller øsnker du veiledning iht Vipps betalingen? -Ring
+            Spørsmål eller ønsker du veiledning iht Vipps betalingen? -Ring
             Bjørn på XXXXXXXX man-fre, kl.12-18:00
             {/* <InputGroup>
               <Label htmlFor="firstname"> First Name</Label>

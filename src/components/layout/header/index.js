@@ -10,7 +10,7 @@ import { Outer, Nav, Logo, NavActions, NavList, NavListItem } from './styles';
 
 export default function Header({ simple }) {
   const { mainNavigation } = useSettings();
-  const auth = useAuth();
+  // const auth = useAuth();
 
   const [navOpen, setNavOpen] = useState(false);
 
@@ -19,7 +19,7 @@ export default function Header({ simple }) {
       <Link href="/">
         <a>
           <Logo>
-            <img src="/static/ornforlag-logo.svg" alt="Ørn forlag" />
+            <img src="/static/ornforlag-logo.svg" alt="ornforlag" />
           </Logo>
         </a>
       </Link>
