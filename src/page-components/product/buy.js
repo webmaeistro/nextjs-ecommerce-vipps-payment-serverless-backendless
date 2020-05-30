@@ -20,7 +20,7 @@ const BuyButton = ({ product, selectedVariant }) => {
       id: product.id,
       variant_id: selectedVariant.id,
       name: product.name,
-      path: product.path
+      path: product.path,
     };
 
     basket.actions.addItem(basketItemToAdd);
@@ -36,7 +36,7 @@ const BuyButton = ({ product, selectedVariant }) => {
         </strong>
       </Price>
       <Button width="200px" onClick={buy}>
-        Add to Basket
+        Legg til hurtigkurven
       </Button>
     </ProductFooter>
   );

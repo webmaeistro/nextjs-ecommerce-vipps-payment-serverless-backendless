@@ -1,4 +1,4 @@
-import stripeSdk from 'stripe';
+/*import stripeSdk from 'stripe';
 
 export { default as orderNormalizer } from './order-normalizer';
 
@@ -12,3 +12,4 @@ export const getClient = () => {
 
   return client;
 };
+*/

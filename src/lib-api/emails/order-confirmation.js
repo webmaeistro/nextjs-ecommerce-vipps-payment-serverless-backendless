@@ -28,15 +28,16 @@ export default async function sendOrderConfirmation(orderId) {
         <mj-section>
           <mj-column>
             <mj-text>
-              <h1>Order Summary</h1>
-              <p>Thanks for your order! This email contains a copy of your order for your reference.</p>
+              <h1>Bekreftelse på bokkjøp</h1>
+              <p>Takk for ditt kjøpt av bok fra Ørn forlag (ornforlag.no) sin nett handel. Her følger en kvitering av transaksjonen</p>
               <p>
                 Order Number: <strong>#${order.id}</strong>
               </p>
               <p>
-                First name: <strong>${order.customer.firstName}</strong><br />
-                Last name: <strong>${order.customer.lastName}</strong><br />
-                Email address: <strong>${email}</strong>
+                Fornavn: <strong>${order.customer.firstName}</strong><br />
+                Etternavn: <strong>${order.customer.lastName}</strong><br />
+                Epost: <strong>${email}</strong>
+                Addresse: <strong>${order.customer.address}</strong><br />
               </p>
               <p>
                 Total: <strong>${formatCurrency({

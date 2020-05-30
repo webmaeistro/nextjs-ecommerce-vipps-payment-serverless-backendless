@@ -1,3 +1,5 @@
+{
+  /*
 import React from 'react';
 
 export default class KlarnaCheckout extends React.Component {
@@ -84,4 +86,6 @@ export default class KlarnaCheckout extends React.Component {
 
     return <div id="klarna-checkout-container" />;
   }
+}
+*/
 }

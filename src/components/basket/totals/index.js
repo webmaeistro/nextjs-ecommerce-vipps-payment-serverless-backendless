@@ -62,7 +62,7 @@ export const Totals = () => {
         </Row>
 
         <Row modifier="total-vat">
-          <span>TAX amount:</span>
+          <span>MVA.:</span>
           <span>
             <CurrencyValue value={totalVatAmount} />
           </span>

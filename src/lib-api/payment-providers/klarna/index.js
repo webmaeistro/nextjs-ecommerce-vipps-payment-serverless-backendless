@@ -1,3 +1,4 @@
+/*
 import KlarnaClient from '@crystallize/node-klarna/v3';
 
 export { default as orderNormalizer } from './order-normalizer';
@@ -17,3 +18,4 @@ export const getClient = () => {
 
   return client;
 };
+*/

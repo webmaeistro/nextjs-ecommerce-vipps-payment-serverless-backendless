@@ -1,16 +1,17 @@
 import React from 'react';
-import Router from 'next/router';
+//import Router from 'next/router';
 import styled from 'styled-components';
 
-import StripeCheckout from './stripe';
-import KlarnaCheckout from './klarna';
+//import StripeCheckout from './stripe';
+//import KlarnaCheckout from './klarna';
 import VippsCheckout from './vipps';
 
 import {
   Form,
-  Input,
+  /*  Input,
   InputGroup,
   Label,
+  */
   PaymentSelector,
   PaymentMethods,
   PaymentButton,
@@ -54,8 +55,11 @@ export default class PaymentGateway extends React.Component {
     return (
       <Inner>
         <Form noValidate>
+          <Row>Vi i Ørn forlag støtter kunn Vipps betalings system.</Row>
           <Row>
-            <InputGroup>
+            Spørsmål eller øsnker du veiledning iht Vipps betalingen? -Ring
+            Bjørn på XXXXXXXX man-fre, kl.12-18:00
+            {/* <InputGroup>
               <Label htmlFor="firstname"> First Name</Label>
               <Input
                 name="firstname"
@@ -90,6 +94,7 @@ export default class PaymentGateway extends React.Component {
                 required
               />
             </InputGroup>
+           */}
           </Row>
 
           <SectionHeader>Betal med Vipps hurtigkasse</SectionHeader>
@@ -121,6 +126,7 @@ export default class PaymentGateway extends React.Component {
                 <img src="/static/vipps-logo.png" alt="Vipps logo" />
               </PaymentButton>
             </PaymentSelector>
+            {/*
             {paymentMethod === 'stripe' && (
               <PaymentMethod>
                 <StripeCheckout
@@ -146,7 +152,7 @@ export default class PaymentGateway extends React.Component {
                 />
               </PaymentMethod>
             )}
-
+            */}
             {paymentMethod === 'vipps' && (
               <PaymentMethod>
                 <VippsCheckout

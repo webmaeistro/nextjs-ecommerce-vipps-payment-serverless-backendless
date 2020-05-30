@@ -34,7 +34,7 @@ export default function GridItem({ data, gridCell }) {
           <CurrencyValue value={price} />
         </Price>
         <Title>{name}</Title>
-        <Button>BUY</Button>
+        <Button>Kjøp</Button>
       </div>
     );
   }

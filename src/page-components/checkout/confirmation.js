@@ -32,7 +32,7 @@ export default function Confirmation({ order: orderData }) {
   }, [emptied, basket.actions]);
 
   const order = orderData.data.orders.get;
-  // const { email } = order.customer.addresses;
+  const { email } = order.customer.addresses;
 
   const items = order.cart.map((item) => ({
     ...item,
@@ -50,7 +50,9 @@ export default function Confirmation({ order: orderData }) {
           <p>
             Takk for kjøpet og ha en flott dag videre. Hvis du ønsker en kopi av
             denne kviteringen ta et skjermbilde eller print ut siden. Kjøpet er
-            også lagret i historikk i betalinger på din Vipps App.
+            også lagret i historikk i betalinger på din Vipps App. Du kan be om
+            en kopi tilsendt din epost: {email} ved å kontakte
+            bjorn@ornforlag.no
           </p>
           <Line />
           <BillingDetails order={order} />

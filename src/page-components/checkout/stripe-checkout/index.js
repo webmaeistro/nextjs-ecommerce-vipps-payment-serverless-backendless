@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import styled from 'styled-components';
@@ -170,3 +171,4 @@ class StripeCheckout extends React.Component {
 }
 
 export default injectStripe(StripeCheckout);
+*/

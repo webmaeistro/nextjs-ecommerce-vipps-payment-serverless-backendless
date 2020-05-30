@@ -1,3 +1,4 @@
+/*
 import { getClient } from './index';
 
 export default async function klarnaOrderNormalizer({ klarnaOrderId }) {
@@ -119,3 +120,4 @@ export default async function klarnaOrderNormalizer({ klarnaOrderId }) {
     additionalInformation: order.merchant_data,
   };
 }
+*/

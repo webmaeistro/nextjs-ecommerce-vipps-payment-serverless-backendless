@@ -45,7 +45,7 @@ export default function CheckoutLoader(props) {
   return (
     <Layout title="Checkout" simple>
       <Head>
-        <script id="stripe-js" src="https://js.stripe.com/v3/" async />
+        {/* <script id="stripe-js" src="https://js.stripe.com/v3/" async />*/}
       </Head>
       <Checkout {...props} />
     </Layout>

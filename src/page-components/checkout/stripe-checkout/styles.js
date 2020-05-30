@@ -1,3 +1,4 @@
+/*
 import styled from 'styled-components';
 
 import { colors } from 'ui';
@@ -14,3 +15,4 @@ export const ErrorMessage = styled.p`
   color: ${colors.error};
   margin-top: 1rem;
 `;
+*/

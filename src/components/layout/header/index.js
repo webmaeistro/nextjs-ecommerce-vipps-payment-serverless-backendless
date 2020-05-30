@@ -19,7 +19,7 @@ export default function Header({ simple }) {
       <Link href="/">
         <a>
           <Logo>
-            <img src="/static/frntr-logo.svg" alt="Logo" />
+            <img src="/static/ornforlag-logo.svg" alt="Ørn forlag" />
           </Logo>
         </a>
       </Link>

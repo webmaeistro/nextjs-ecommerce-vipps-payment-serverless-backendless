@@ -1,5 +1,5 @@
 // Maps klarna order fetch result to Crystallize getOrder query result
-
+/*
 export default function klarnaOrderDenormalizer(orderData) {
   const denormalizedCart = orderData.order_lines.map((orderLine) => {
     return {
@@ -54,3 +54,4 @@ export default function klarnaOrderDenormalizer(orderData) {
     },
   };
 }
+*/

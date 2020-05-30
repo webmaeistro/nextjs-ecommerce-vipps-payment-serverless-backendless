@@ -1,4 +1,5 @@
-import React from 'react';
+{
+  /*import React from 'react';
 import { Elements, StripeProvider } from 'react-stripe-elements';
 
 import StripeCheckout from './stripe-checkout';
@@ -78,3 +79,5 @@ class StripeWrapper extends React.Component {
 }
 
 export default StripeWrapper;
+*/
+}

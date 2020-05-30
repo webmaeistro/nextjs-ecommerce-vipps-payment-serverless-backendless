@@ -11,13 +11,13 @@ import {
   Items,
   ItemOuter,
   BasketIsEmpty,
-  RemainingUntilFreeShipping
+  RemainingUntilFreeShipping,
 } from './styles';
 
 export const TinyBasket = ({
   hideTotals = false,
   hideRemainingUntilFreeShipping = false,
-  itemImageSizes
+  itemImageSizes,
 }) => {
   const { state, actions } = useBasket();
 
@@ -30,7 +30,9 @@ export const TinyBasket = ({
   if (!items.length) {
     return (
       <Outer>
-        <BasketIsEmpty>Your basket is empty.</BasketIsEmpty>
+        <BasketIsEmpty>
+          Din handlekruv er uten bøker gitt.. kjøp en bok davel?{' '}
+        </BasketIsEmpty>
       </Outer>
     );
   }
@@ -38,7 +40,7 @@ export const TinyBasket = ({
   return (
     <Outer>
       <Items>
-        {items.map(item => (
+        {items.map((item) => (
           <ItemOuter key={item.basketId} item={item}>
             <TinyBasketItem
               actions={actions}
@@ -55,9 +57,9 @@ export const TinyBasket = ({
           !freeShipping &&
           remainingUntilFreeShippingApplies > 0 && (
             <RemainingUntilFreeShipping>
-              Add another{' '}
-              <CurrencyValue value={remainingUntilFreeShippingApplies} /> to
-              your order for free shipping.
+              Legg til bøker verdi av{' '}
+              <CurrencyValue value={remainingUntilFreeShippingApplies} /> to til
+              din ordre for å kvalifisere til gratis frakt.
             </RemainingUntilFreeShipping>
           )}
       </div>

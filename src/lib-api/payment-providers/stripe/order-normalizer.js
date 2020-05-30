@@ -1,3 +1,4 @@
+/*
 import { getClient } from './index';
 
 export default async function stripeOrderNormalizer({
@@ -117,3 +118,4 @@ export default async function stripeOrderNormalizer({
     additionalInformation: paymentIntent.merchant_data,
   };
 }
+*/

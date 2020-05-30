@@ -14,12 +14,27 @@ export default function Footer() {
       <Link href="/">
         <a>
           <Logo>
-            <img src="/static/frntr-logo.svg" alt="logo" />
+            <img src="/static/ornforlag-logo.svg" alt="Ørn forlag " />
           </Logo>
         </a>
       </Link>
+      <br />
+      <p>
+        {' '}
+        <adress>
+          <strong>Ørn forlag</strong> <br />
+          Veståsen 4<br />
+          1362 Hosle <br />
+          Norway
+        </adress>
+        <br />
+        <br />
+        Org.nr.: 994304399 MVA <br />
+        Kontonr.: 9235.27.10220
+      </p>
+
       <NavList>
-        <h5>Menu</h5>
+        <h5>Meny</h5>
         {mainNavigation.map((category) => (
           <li key={category.path}>
             <Link as={category.path} href="/[...catalogue]">
@@ -29,9 +44,10 @@ export default function Footer() {
         ))}
       </NavList>
       <Powered>
-        <p>eCommerce by</p>
-        <a href="https://crystallize.com" aria-label="crystallize.com">
-          <IconLogo size={10} />
+        <p>Nettside av </p>
+        <a href="https://github.com/webmaeistro/" aria-label="Martin-Andersen">
+          <IconLogo size={5} />
+          Martin Andersen
         </a>
       </Powered>
     </Outer>
