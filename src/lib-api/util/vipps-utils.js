@@ -5,7 +5,7 @@ const {
   VIPPS_CLIENT_ID,
   VIPPS_CLIENT_SECRET,
   VIPPS_SUB_KEY,
-  VIPPS_SUB_KEY_SEC,
+  // VIPPS_SUB_KEY_SEC,
 } = process.env;
 
 const createAuthKey = () =>

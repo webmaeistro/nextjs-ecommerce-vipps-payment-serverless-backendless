@@ -21,8 +21,8 @@ export const Loader = styled.div`
 export const Sections = styled.div`
   display: flex;
   align-items: center;
-  background: ${colors.grey};
-  padding: 50px;
+  background: ${colors.vippsWhite};
+  padding: 39px;
   flex-direction: row-reverse;
   justify-content: center;
 
@@ -139,7 +139,7 @@ export const ProductFooter = styled.div`
 
 export const Price = styled.div`
   text-align: center;
-  color: ${colors.darkText};
+  color: ${colors.vippsPurple};
   font-size: 30px;
   margin-right: 20px;
 

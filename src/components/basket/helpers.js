@@ -2,10 +2,10 @@ export const animationSpeedMs = 300;
 
 export function getSupportedOptionsFromProps(props) {
   const {
-    freeShippingMinimumPurchaseAmount = -1,
+    freeShippingMinimumPurchaseAmount = 896,
     onEmpty,
     onAddToBasket,
-    onRemoveFromBasket
+    onRemoveFromBasket,
   } = props;
 
   return {
@@ -14,18 +14,18 @@ export function getSupportedOptionsFromProps(props) {
     ),
     onEmpty,
     onAddToBasket,
-    onRemoveFromBasket
+    onRemoveFromBasket,
   };
 }
 
 export const generateUniqueId = (function iife() {
   let idIncremenet = 0;
 
-  return name => `crystallize-${name}-${idIncremenet++}`;
+  return (name) => `crystallize-${name}-${idIncremenet++}`;
 })();
 
 export function calculateTotals({ items, discount, options, shipping }) {
-  const { freeShippingMinimumPurchaseAmount = -1 } = options;
+  const { freeShippingMinimumPurchaseAmount = 896 } = options;
 
   const totalQuantity = items.reduce((acc, i) => acc + i.quantity, 0);
 
@@ -57,7 +57,7 @@ export function calculateTotals({ items, discount, options, shipping }) {
     }
   }
 
-  const shippingCost = shipping ? shipping.price : 0;
+  const shippingCost = shipping ? shipping.price : 99;
 
   let totalToPay = totalPriceMinusDiscount;
   if (!freeShipping && shippingCost) {
@@ -72,7 +72,7 @@ export function calculateTotals({ items, discount, options, shipping }) {
     totalQuantity,
     freeShipping,
     remainingUntilFreeShippingApplies,
-    items
+    items,
   };
 }
 
@@ -84,6 +84,6 @@ export function getVariantVATprops({ product, variant }) {
 
   return {
     priceWithoutVat,
-    vatAmount: variant.price - priceWithoutVat
+    vatAmount: variant.price - priceWithoutVat,
   };
 }

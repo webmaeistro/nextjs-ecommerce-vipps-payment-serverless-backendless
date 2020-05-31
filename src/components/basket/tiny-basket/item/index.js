@@ -17,7 +17,7 @@ import {
   Price,
   PriceVat,
   SubInfoOuter,
-  SubInfoLine
+  SubInfoLine,
 } from './styles';
 
 const TinyBasketItem = ({ actions, item }) => {
@@ -42,7 +42,7 @@ const TinyBasketItem = ({ actions, item }) => {
       <ItemImage
         {...item.image}
         sizes="200px"
-        onError={e => {
+        onError={(e) => {
           e.target.onerror = null;
           e.target.src = item.placeholder_image;
         }}
@@ -94,7 +94,9 @@ const TinyBasketItem = ({ actions, item }) => {
           </button>
         </ItemQuantityChanger>
       </div>
-      <ItemDelete onClick={remove}>Remove {item.name} from basket</ItemDelete>
+      <ItemDelete onClick={remove}>
+        Ta bort {item.name} fra handlekurven
+      </ItemDelete>
     </Item>
   );
 };

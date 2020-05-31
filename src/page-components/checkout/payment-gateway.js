@@ -122,7 +122,7 @@ export default class PaymentGateway extends React.Component {
                 onClick={() => this.setState({ paymentMethod: 'vipps' })}
               >
                 <img
-                  src="static/pay_with_vipps_rect_250_NO.png"
+                  src="static/pay_with_vipps_rect_250_EN@2x.png"
                   alt="Vipps logo"
                 />
               </PaymentButton>

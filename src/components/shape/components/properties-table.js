@@ -17,7 +17,7 @@ const PropertiesOuter = styled.div`
 `;
 
 const Properties = styled.table`
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
 
   td {

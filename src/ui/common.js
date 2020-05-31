@@ -20,10 +20,10 @@ export const Header = styled.div`
   margin-bottom: 50px;
   padding: 100px 50px 50px;
   max-width: 800px;
-  text-align: ${(p) => (p.centerContent ? 'center' : 'left')};
+  text-align: ${(p) => (p.centerContent ? 'center' : 'under')};
   margin: ${(p) => (p.centerContent ? '0 auto' : '0 0 50px 0')};
   ${responsive.xs} {
-    padding: 100px 0 50px;
+    padding: 80px 0 40px;
   }
   h1 {
     font-size: 2.4rem;
@@ -33,7 +33,7 @@ export const Header = styled.div`
   }
 
   p {
-    text-align: ${(p) => (p.centerContent ? 'center !important' : 'left')};
+    text-align: ${(p) => (p.centerContent ? 'center !important' : 'under')};
     font-size: 18px;
     line-height: 1.8rem;
     color: ${colors.darkText};

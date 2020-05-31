@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { CurrencyValue } from 'components/currency-value';
 import { responsive, H3 } from 'ui';
+import { PostalCodeElement } from 'react-stripe-elements';
 
 const Outer = styled.div`
   width: 300px;
@@ -39,7 +40,8 @@ const BillingDetails = ({ order }) => {
         <p>
           Epost: <strong>{order.customer.addresses[email]}</strong>
         </p>
-        Leverings addresse: <strong>{order.customer.addresses[3]}</strong>
+        Leverings addresse:{' '}
+        <strong>{order.customer.addresses[PostalCodeElement]}</strong>
         <p>
           SUM totalt:{' '}
           <strong>

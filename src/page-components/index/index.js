@@ -36,7 +36,7 @@ export default function FrontPage({ catalogue }) {
       ?.grids || [];
 
   return (
-    <Layout title="Home">
+    <Layout title="Ørn forlag | bokutgiver av Norsk natur og kultur">
       <Outer>
         {grid && (
           <Grid

@@ -65,11 +65,11 @@ export const ErrorMessage = styled.p`
   margin-top: 1rem;
 `;
 
-export const StripeWrapper = styled.div`
+/*export const StripeWrapper = styled.div`
   width: 100%;
   padding-bottom: 1rem;
 `;
-
+*/
 export const PaymentMethods = styled.div`
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ export const PaymentMethods = styled.div`
 
 export const PaymentButton = styled.button`
   /* ${(props) =>
-    `background: ${props.active ? colors.vippsWhite : 'white'}`}; */
+    `background: ${props.active ? colors.vippsOrange : 'white'}`}; */
   background:${(p) => p.color};
   font-size: 18px;
   padding: 0.5rem;
@@ -87,7 +87,7 @@ export const PaymentButton = styled.button`
   height: 80px;
   border-radius: 10px;
   img {
-    max-width:100px;
+    max-width:100%;
   }
   &:last-child {
     border-bottom: none;

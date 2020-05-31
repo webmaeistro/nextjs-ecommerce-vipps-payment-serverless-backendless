@@ -42,7 +42,7 @@ const orderToVippsBody = (
         {
           isDefault: 'Y',
           priority: 0,
-          shippingCost: 10.0,
+          shippingCost: 99,
           shippingMethod: 'Posten Servicepakke',
           shippingMethodId: 'posten-servicepakke',
         },
@@ -51,8 +51,8 @@ const orderToVippsBody = (
     customerInfo: {},
     transaction: {
       orderId: crystallizeOrderId,
-      amount: totalCartAmount * 100 - 10, //Vipps stores int for transaction amount (2 decimals)
-      transactionText: 'You got book mothafucka',
+      amount: totalCartAmount * 100, //Vipps stores int for transaction amount (2 decimals)
+      transactionText: 'Ørn forlag | Kjøp av bok på ornforlag.no',
     },
   };
 };

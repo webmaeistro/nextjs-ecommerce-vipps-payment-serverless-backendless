@@ -1,3 +1,6 @@
+import { orderNormalizer } from 'lib-api/payment-providers/vipps';
+import { updateCrystallizeOrder } from 'lib-api/crystallize/order';
+
 export default async (req, res) => {
   res.status(200).send('hello');
 

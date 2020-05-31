@@ -22,7 +22,7 @@ export const Totals = () => {
     <Outer>
       <Rows>
         <Row modifier="total-price">
-          <span>Totale prisen:</span>
+          <span>Pris:</span>
           <span>
             <CurrencyValue value={totalPrice} />
           </span>
@@ -36,7 +36,7 @@ export const Totals = () => {
               </span>
             </Row>
             <Row modifier="total-after-discount">
-              <span>Totalen etter rabbaten:</span>
+              <span>SUM pris:</span>
               <span>
                 <CurrencyValue value={totalPriceMinusDiscount} />
               </span>
@@ -44,31 +44,34 @@ export const Totals = () => {
           </>
         )}
         <Row modifier="shipping">
-          <span>Shipping:</span>
+          <span>Porto:</span>
           {freeShipping ? (
             <span>
-              {shipping && shipping.unit_price > 0 && (
+              {shipping && shipping.unit_price > 99 && (
                 <StrikeThrough>
                   <CurrencyValue value={shipping.unit_price} />
                 </StrikeThrough>
               )}{' '}
-              <CurrencyValue value="59" />
+              <CurrencyValue value="0" />
             </span>
           ) : (
             <span>
-              <CurrencyValue value={shipping ? shipping.unit_price : 0} />
+              <CurrencyValue value={shipping ? shipping.unit_price : 99} />
             </span>
           )}
         </Row>
 
         <Row modifier="total-vat">
-          <span>M</span>
+          <span>MVA.:</span>
           <span>
             <CurrencyValue value={totalVatAmount} />
+            <line></line>
           </span>
         </Row>
         <Row modifier="to-pay">
-          <span>Total SUM å betalte:</span>
+          <span>
+            <strong>SUM totalt</strong> å betale:
+          </span>
           <span>
             <CurrencyValue value={totalToPay} />
           </span>
