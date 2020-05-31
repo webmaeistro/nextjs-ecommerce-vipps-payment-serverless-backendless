@@ -1,7 +1,6 @@
-# Crystallize NextJS Boilerplate
+# Nextjs Ecommerce Vipps Hurtigkasse Crystallize GraphQL for ornforlag.no
 
-[![Crystallize Community Slack][21]][22] [![React: latest][0]][1]
-[![Next: latest][2]][3] [![code style: prettier][4]][5]
+[![React: latest][0]][1] [![Next: latest][2]][3] [![code style: prettier][4]][5]
 [![code linter: Eslint][6]][7]
 
 The bare minimum skeleton you need to get a frontend up and running on the
@@ -22,20 +21,10 @@ Check it out, the boilerplate is Open Source and MIT licensed.
 
 ## Getting Started
 
-You can use [Crystallize CLI][17] to bootstrap a project with this
-`Next.js + React` boilerplate.
+fork clone repo. cd into folder'
 
-Simply run the following command (>= Node 8 required):
-
-```sh
-npx @crystallize/cli my-project
-```
-
-This will walk you through the steps of specifying your tenant, choosing the
-template (Next.js + React) and adding additional features such as Vercel.
-
-Once your project has been created, you can simply navigate into your project's
-directory and run the following to start up your development server:
+run: npm install / yarn -rename dot-env-fillout-rename to .env and ofc fill it
+out
 
 ```sh
 npm run dev
@@ -101,22 +90,8 @@ and [Platform.sh][23]
 [6]:
   https://img.shields.io/badge/code_linter-eslint-463fd4.svg?style=flat-square
 [7]: https://github.com/prettier/prettier
-[8]: https://crystallize.com/product
-[9]: https://crystallize.com/product/product-information-management
-[10]: https://crystallize.com
-[11]: https://crystallize.com/developers
-[12]: https://crystallize.com/blog/frontend-performance-measuring-kpis
-[13]: https://crystallize.com/product/product-information-management
-[14]: https://crystallize.com/blog/ecommerce-seo-checklist
-[15]:
-  https://crystallize.com/blog/content-rich-storytelling-makes-juicy-ecommerce
-[16]:
-  https://snowball.digital/blog/content-strategy-for-exponential-growth-marketing
-[17]: https://github.com/crystallizeapi/crystallize-cli
 [18]: https://vercel.com/docs/v2/serverless-functions/introduction
 [19]: https://vercel.com/guides/deploying-nextjs-with-now/
 [20]: https://vercel.com
-[21]:
-  https://img.shields.io/static/v1?label=Slack&logo=slack&message=Crystallize%20Community&color=68d1b7
 [22]: https://slack.com
 [23]: https://platform.sh
