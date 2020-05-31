@@ -58,7 +58,7 @@ export const Text = styled.div`
 `;
 
 export const Description = styled.div`
-  font-family: 'Roboto', 'sans-serif';
+  font-family: 'Vipps Display', 'sans-serif';
   font-size: 1rem;
   margin-top: 10px;
   line-height: 1.2rem;

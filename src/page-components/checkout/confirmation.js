@@ -32,7 +32,7 @@ export default function Confirmation({ order: orderData }) {
   }, [emptied, basket.actions]);
 
   const order = orderData.data.orders.get;
-  const { email } = order.customer.addresses;
+  const { email } = order.customer.addresses[email];
 
   const items = order.cart.map((item) => ({
     ...item,

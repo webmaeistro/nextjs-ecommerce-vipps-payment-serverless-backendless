@@ -17,7 +17,7 @@ class VippsWrapper extends React.Component {
     const lineItems = items.map((item) => ({
       name: item.name,
       sku: item.sku,
-      net: item.price,
+      net: item.price * item.quantity,
       gross: item.priceWithoutVat,
       quantity: item.quantity,
       product_id: item.id,
@@ -52,7 +52,9 @@ class VippsWrapper extends React.Component {
     }
 
     if (error) {
-      return <p>Unable to initialise Vipps payment!</p>;
+      return (
+        <p>Obs her skjedde det noe som blokerte for starte Vipps betalingen!</p>
+      );
     }
 
     return url ? null : <div id="vipps-checkout-container" />;

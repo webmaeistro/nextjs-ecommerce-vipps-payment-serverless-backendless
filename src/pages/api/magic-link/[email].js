@@ -59,13 +59,14 @@ export default async (req, res) => {
     sgMail.setApiKey(sendGridApiKey);
     await sgMail.send({
       to: email,
-      from: 'example@crystallize.com',
-      subject: 'Magic Link',
+      from: 'bjorn@ornforlag.no',
+      subject: 'Magisk link',
       html,
     });
   } else {
     return res.json({
-      message: 'Email sent! The verification link will expire in 1 hour',
+      message:
+        'Email sendt! Verifikasjons lenken er kunn gyldig i en time fra nå!',
       magicLink,
     });
   }

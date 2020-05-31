@@ -6,7 +6,7 @@ import { responsive } from './responsive';
 export const H1 = styled.h1`
   margin: 0 0 15px;
   font-size: 3rem;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Vipps Display', sans-serif;
   color: ${colors.black};
 
   ${responsive.smAndLess} {
@@ -25,7 +25,7 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h3`
-  color: ${colors.black};
+  color: ${colors.vippsBlack};
   font-size: 1.4rem;
   margin: 1rem 0;
 

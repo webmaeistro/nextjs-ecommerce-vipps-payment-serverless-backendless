@@ -1,12 +1,13 @@
 {
-  "name": "nextjs-ornforlag-vipps-v2",
+  "name": "nextjs-ecommerce-vipps-express-payment",
   "version": "1.0.0",
   "license": "MIT",
+  "author": "Martin Andersen <marander@protonmail.com> (@webmaeistro)",
   "engines": {
     "node": ">=10.10"
   },
   "repository": {
-    "url": "https://github.com/webmaeistro/nextjs-ornforlag-vipps-v2.git",
+    "url": "https://github.com/webmaeistro/nextjs-ecommerce-vipps-express-payment.git",
     "type": "git+https"
   },
   "scripts": {

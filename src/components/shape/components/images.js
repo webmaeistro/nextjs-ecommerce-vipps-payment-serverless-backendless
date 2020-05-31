@@ -26,8 +26,8 @@ const List = styled.div`
   img {
     display: block;
     height: 100%;
-    width: 100%;
-    object-fit: cover;
+    width: auto;
+    object-fit: contain;
   }
 `;
 

@@ -67,7 +67,7 @@ export const NavList = styled.ul`
 
   /* Make space for logout button */
   ${responsive.smAndLess} {
-    margin-top: 30px;
+    margin-top: 15px;
   }
 `;
 
@@ -82,7 +82,7 @@ export const NavListItem = styled.li`
     padding: 10px 10px;
     transition: all 100ms;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 1px;
     &:hover {
       text-decoration: underline;

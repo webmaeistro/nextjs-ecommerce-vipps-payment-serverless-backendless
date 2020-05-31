@@ -11,7 +11,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Img = styled(Image)`
-  width: 100%;
+  width: auto;
   height: 100%;
   display: block;
   margin: 0 auto;
@@ -30,7 +30,7 @@ export const Title = styled(H3)`
   text-transform: uppercase;
   color: ${colors.black};
   font-weight: 900;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: 'Vipps Text', 'sans-serif';
 `;
 
 export const Text = styled.div`
@@ -64,7 +64,7 @@ export const Outer = styled.a`
 
   button {
     margin: 0 auto;
-    min-width: 200px;
+    min-width: 250px;
     max-width: 80%;
   }
 

@@ -37,7 +37,7 @@ export default async function sendOrderConfirmation(orderId) {
                 Fornavn: <strong>${order.customer.firstName}</strong><br />
                 Etternavn: <strong>${order.customer.lastName}</strong><br />
                 Epost: <strong>${email}</strong>
-                Addresse: <strong>${order.customer.address}</strong><br />
+                Addresse: <strong>${order.customer.addresses[0]}</strong><br />
               </p>
               <p>
                 Total: <strong>${formatCurrency({

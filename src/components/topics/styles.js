@@ -48,7 +48,7 @@ export const RelatedTopics = styled.div`
     /* display: none; */
   }
   h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Vipps Display', sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
     margin-bottom: 10px;

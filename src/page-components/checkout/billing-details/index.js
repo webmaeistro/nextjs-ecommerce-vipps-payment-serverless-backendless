@@ -25,7 +25,7 @@ const Inner = styled.div`
 
 const BillingDetails = ({ order }) => {
   // eslint-disable-next-line no-unused-vars
-  const { email } = order.customer.addresses;
+  const { email } = order.customer.addresses[email];
   return (
     <Outer>
       <Inner>
@@ -37,9 +37,9 @@ const BillingDetails = ({ order }) => {
           </strong>
         </p>
         <p>
-          Epost: <strong>{order.customer.email}</strong>
+          Epost: <strong>{order.customer.addresses[email]}</strong>
         </p>
-        Leverings addresse: <strong>{order.customer.address}</strong>
+        Leverings addresse: <strong>{order.customer.addresses[3]}</strong>
         <p>
           SUM totalt:{' '}
           <strong>

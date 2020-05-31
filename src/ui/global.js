@@ -12,7 +12,7 @@ export default createGlobalStyle`
   }
   body {
     margin: 0;
-    font: 16px/1 roboto, sans-serif;
+    font: 16px/1 Vipps Text, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background: #fff;
@@ -76,7 +76,7 @@ export default createGlobalStyle`
     font: inherit;
     -webkit-font-smoothing: inherit;
     letter-spacing: inherit;
-    background: none;
+    background: FF5B24;
     cursor: pointer;
   }
   ::-moz-focus-inner {

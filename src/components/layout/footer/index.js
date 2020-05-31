@@ -24,13 +24,13 @@ export default function Footer() {
         <adress>
           <strong>Ørn forlag</strong> <br />
           Veståsen 4<br />
-          1362 Hosle <br />
+          1362, Hosle <br />
           Norway
         </adress>
         <br />
         <br />
-        Org.nr.: 994304399 MVA <br />
-        Kontonr.: 9235.27.10220
+        <strong>Org.nr.</strong>: 994304399 MVA <br />
+        <strong>Kontonr.</strong>: 9235.27.10220
       </p>
 
       <NavList>
@@ -47,7 +47,6 @@ export default function Footer() {
         <p>Nettside av </p>
         <a href="https://github.com/webmaeistro/" aria-label="Martin-Andersen">
           <IconLogo size={5} />
-          Martin Andersen
         </a>
       </Powered>
     </Outer>

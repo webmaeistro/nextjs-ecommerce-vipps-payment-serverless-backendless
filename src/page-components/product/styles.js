@@ -108,7 +108,7 @@ export const Info = styled.div`
   }
 `;
 export const Name = styled(H1)`
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Vipps Display', sans-serif;
   font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;

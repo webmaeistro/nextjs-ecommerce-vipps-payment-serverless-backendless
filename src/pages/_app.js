@@ -86,8 +86,8 @@ MyApp.getInitialProps = async function ({ router: { asPath } }) {
         mainNavigation: [],
         tenant: {
           defaults: {
-            language: 'en',
-            currency: 'usd',
+            language: 'nb',
+            currency: 'nok',
           },
         },
       },
