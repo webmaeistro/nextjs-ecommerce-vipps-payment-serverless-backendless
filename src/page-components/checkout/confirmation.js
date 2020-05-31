@@ -48,11 +48,9 @@ export default function Confirmation({ order: orderData }) {
         <CustomHeader>
           <H1>Betaling gjennomført!</H1>
           <p>
-            Takk for kjøpet og ha en flott dag videre. Hvis du ønsker en kopi av
-            denne kviteringen ta et skjermbilde eller print ut siden. Kjøpet er
-            også lagret i historikk i betalinger på din Vipps App. Du kan be om
-            en kopi tilsendt din epost: {email} ved å kontakte
-            bjorn@ornforlag.no
+            Takk for kjøpet! Boksen er straks på vei i posten. Hvis du ønsker en
+            kopi av denne kviteringen ta et skjermbilde eller print ut siden.
+            Kjøpet er også lagret i historikk i betalinger på din Vipps App.
           </p>
           <Line />
           <BillingDetails order={order} />
