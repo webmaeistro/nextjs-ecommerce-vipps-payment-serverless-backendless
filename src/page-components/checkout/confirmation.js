@@ -50,7 +50,7 @@ export default function Confirmation({ order: orderData }) {
           <p>
             Takk for kjøpet! Boksen er straks på vei i posten. Hvis du ønsker en
             kopi av denne kviteringen ta et skjermbilde eller print ut siden.
-            Kjøpet er også lagret i historikk i betalinger på din Vipps App.
+            Kjøpet er også lagret i historikk i betalinger på din Vipps app.
           </p>
           <Line />
           <BillingDetails order={order} />
