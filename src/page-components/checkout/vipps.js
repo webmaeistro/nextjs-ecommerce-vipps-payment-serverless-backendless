@@ -44,7 +44,7 @@ class VippsWrapper extends React.Component {
   }
 
   render() {
-    const { personalDetails, items, onSuccess } = this.props;
+    // const { personalDetails, items, onSuccess } = this.props;
     const { loading, error, url } = this.state;
 
     if (loading) {

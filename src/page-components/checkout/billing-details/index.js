@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { CurrencyValue } from 'components/currency-value';
 import { responsive, H3 } from 'ui';
-import { PostalCodeElement } from 'react-stripe-elements';
+//import { PostalCodeElement } from 'react-stripe-elements';
 
 const Outer = styled.div`
   width: 300px;
