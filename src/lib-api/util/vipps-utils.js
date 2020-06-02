@@ -35,7 +35,8 @@ export async function vippsAccessToken() {
 
 export async function vippsApiCall({
   uri,
-  //  headers = {},
+  // eslint-disable-next-line no-unused-vars
+  headers = {},
   body,
   method = 'POST',
 }) {
