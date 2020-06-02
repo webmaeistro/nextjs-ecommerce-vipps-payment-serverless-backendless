@@ -15,7 +15,7 @@ export const Totals = () => {
     totalToPay,
     totalVatAmount,
     shipping,
-    freeShipping
+    freeShipping,
   } = state;
 
   return (

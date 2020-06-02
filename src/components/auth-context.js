@@ -34,7 +34,7 @@ export function AuthProvider({ children }) {
     <AuthContext.Provider
       value={{
         isLoggedIn,
-        logout: doLogout
+        logout: doLogout,
       }}
     >
       {children}

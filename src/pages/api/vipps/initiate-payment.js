@@ -1,17 +1,18 @@
 /* eslint-disable no-underscore-dangle */
 const config = require('../../../config');
+// eslint-disable-next-line no-unused-vars
 const vippsApiCall = require('../../../lib/util/vipps-utils');
 const normallizer = require('../../../lib/normalizers/vipps');
 const {
-  persistCrystallizeOrder
+  persistCrystallizeOrder,
 } = require('../../../lib/crystallize-order-handler');
 
 const { VIPPS_MERCHANT_SERIAL, NGROK_URL } = config;
 
-const orderToVippsCart = lineItems => {
+const orderToVippsCart = (lineItems) => {
   let totalCartAmount = 0;
 
-  const cartItems = lineItems.map(item => {
+  const cartItems = lineItems.map((item) => {
     totalCartAmount += item.product_tax_amount;
 
     return item;
@@ -19,7 +20,7 @@ const orderToVippsCart = lineItems => {
 
   return {
     cart: cartItems,
-    totalCartAmount: totalCartAmount
+    totalCartAmount: totalCartAmount,
   };
 };
 
@@ -35,14 +36,14 @@ const orderToVippsBody = (
     merchantInfo: {
       merchantSerialNumber: VIPPS_MERCHANT_SERIAL,
       callbackPrefix: `${NGROK_URL}/api/order-persistence/vipps`,
-      //   shippingDetailsPrefix: NGROK_URL,
+      shippingDetailsPrefix: NGROK_URL,
       consentRemovalPrefix: NGROK_URL,
       paymentType: 'eComm Express Payment',
       fallBack: NGROK_URL,
-      isApp: false
+      isApp: false,
     },
     customerInfo: {
-      mobileNumber: personalDetails.phone
+      mobileNumber: personalDetails.phone,
     },
     transaction: {
       orderId: crystallizeOrderId,
@@ -54,16 +55,17 @@ const orderToVippsBody = (
           priority: 0,
           shippingCost: 0,
           shippingMethod: 'Free delivery',
-          shippingMethodId: 'free-delivery'
-        }
-      ]
-    }
+          shippingMethodId: 'free-delivery',
+        },
+      ],
+    },
   };
 };
 
 export default async (req, res) => {
   try {
     const { personalDetails, lineItems, currency } = req.body;
+    // eslint-disable-next-line no-unused-vars
     const { metadata } = req.body;
     const mutationBody = normallizer(
       {},
@@ -84,13 +86,13 @@ export default async (req, res) => {
         lineItems,
         personalDetails,
         data.orders.create.id
-      )
+      ),
     });
   } catch (error) {
     console.log(error);
     return res.json({
       success: false,
-      error: error.stack
+      error: error.stack,
     });
   }
 };

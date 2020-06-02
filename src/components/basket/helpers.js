@@ -5,7 +5,7 @@ export function getSupportedOptionsFromProps(props) {
     freeShippingMinimumPurchaseAmount = -1,
     onEmpty,
     onAddToBasket,
-    onRemoveFromBasket
+    onRemoveFromBasket,
   } = props;
 
   return {
@@ -14,14 +14,14 @@ export function getSupportedOptionsFromProps(props) {
     ),
     onEmpty,
     onAddToBasket,
-    onRemoveFromBasket
+    onRemoveFromBasket,
   };
 }
 
 export const generateUniqueId = (function iife() {
   let idIncremenet = 0;
 
-  return name => `crystallize-${name}-${idIncremenet++}`;
+  return (name) => `crystallize-${name}-${idIncremenet++}`;
 })();
 
 export function calculateTotals({ items, discount, options, shipping }) {
@@ -72,7 +72,7 @@ export function calculateTotals({ items, discount, options, shipping }) {
     totalQuantity,
     freeShipping,
     remainingUntilFreeShippingApplies,
-    items
+    items,
   };
 }
 
@@ -84,6 +84,6 @@ export function getVariantVATprops({ product, variant }) {
 
   return {
     priceWithoutVat,
-    vatAmount: variant.price - priceWithoutVat
+    vatAmount: variant.price - priceWithoutVat,
   };
 }

@@ -20,7 +20,7 @@ export async function persistBasketToCache({
   shipping,
   metadata,
   coupon,
-  discount
+  discount,
 }) {
   try {
     await localStorage.setItem(

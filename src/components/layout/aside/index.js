@@ -10,16 +10,22 @@ import { Basket, Header, Footer } from './styles';
 const CheckoutBtn = styled(Button)`
   width: 100%;
   margin: 20px 0;
-  border: 2px solid #000;
+  border: 2px solid var(--color-text-main);
   padding: 10px 20px;
   display: block;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
 
-  &:hover {
-    background: #000;
-    color: #fff;
+  &:not([disabled]):hover {
+    background: var(--color-text-main);
+    color: var(--color-main-background);
+    text-decoration: none;
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.5;
     text-decoration: none;
   }
 `;

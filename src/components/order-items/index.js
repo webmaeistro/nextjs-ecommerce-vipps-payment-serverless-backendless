@@ -10,12 +10,12 @@ import {
   ItemName,
   Items,
   ItemQuantity,
-  ItemPrice
+  ItemPrice,
 } from './styles';
 
 const OrderItems = ({ items }) => (
   <Items>
-    {items.map(item => (
+    {items.map((item) => (
       <Item key={item.sku}>
         {item.image && (
           <ItemImage {...item.image} alt={item.name} sizes="50vw" />

@@ -6,7 +6,7 @@ export default function items(item) {
   const types = {
     product: <ProductItem data={item} key={item.path} />,
     folder: <FolderItem data={item} key={item.path} />,
-    document: <DocumentItem data={item} key={item.path} />
+    document: <DocumentItem data={item} key={item.path} />,
   };
 
   return types[item.type];

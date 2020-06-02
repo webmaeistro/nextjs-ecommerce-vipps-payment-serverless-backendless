@@ -20,7 +20,7 @@ const BuyButton = ({ product, selectedVariant }) => {
       id: product.id,
       variant_id: selectedVariant.id,
       name: product.name,
-      path: product.path
+      path: product.path,
     };
 
     basket.actions.addItem(basketItemToAdd);

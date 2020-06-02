@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import Image from '@crystallize/react-image';
 
-import { colors, responsive } from 'ui';
+import { responsive } from 'ui';
 
 export const Outer = styled.a`
   display: block;
   height: 100%;
-  color: #fff;
+  color: var(--color-main-background);
   position: relative;
   padding: 1em;
-  background: ${colors.grey};
+  background: var(--color-box-background);
   grid-column-end: span 4;
   ${responsive.xs} {
     margin-bottom: 15px;
@@ -54,7 +54,7 @@ export const Text = styled.div`
     font-size: 1.4em;
     text-transform: uppercase;
     text-align: center;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     color: black;
   }

@@ -1,17 +1,17 @@
-const generateVippsProperties = vippsData => {
+const generateVippsProperties = (vippsData) => {
   const propertiesArray = [
     {
       property: 'vipps_bankIdVerified',
-      value: vippsData.userDetails.bankIdVerified
+      value: vippsData.userDetails.bankIdVerified,
     },
     {
       property: 'vipps_ssn',
-      value: vippsData.userDetails.ssn
+      value: vippsData.userDetails.ssn,
     },
     {
       property: 'vipps_userId',
-      value: vippsData.userDetails.userId
-    }
+      value: vippsData.userDetails.userId,
+    },
   ];
 
   for (const key in vippsData.transactionInfo) {
@@ -20,7 +20,7 @@ const generateVippsProperties = vippsData => {
       value:
         typeof vippsData.transactionInfo[key] === 'string'
           ? vippsData.transactionInfo[key]
-          : vippsData.transactionInfo[key].toString()
+          : vippsData.transactionInfo[key].toString(),
     });
   }
 
@@ -34,7 +34,7 @@ module.exports = ({ vippsOrderId }, vippsData) => {
     currency,
     personalDetails,
     shippingDetails,
-    userDetails
+    userDetails,
   } = vippsData;
   let totalGrossCartAmount = 0;
   let totalNetCartAmount = 0;
@@ -57,25 +57,25 @@ module.exports = ({ vippsOrderId }, vippsData) => {
             city: shippingDetails.address.city,
             country: shippingDetails.address.country,
             phone: userDetails.mobileNumber,
-            email: userDetails.email
-          }
-        ]
+            email: userDetails.email,
+          },
+        ],
       },
       payment: [
         {
           provider: 'custom',
           custom: {
-            properties: generateVippsProperties(vippsData)
-          }
-        }
+            properties: generateVippsProperties(vippsData),
+          },
+        },
       ],
       id: vippsOrderId,
       additionalInformation: JSON.stringify({
-        status: vippsData.transactionInfo.status
-      })
+        status: vippsData.transactionInfo.status,
+      }),
     };
   } else {
-    const orderItemsArray = lineItems.map(lineItem => {
+    const orderItemsArray = lineItems.map((lineItem) => {
       totalGrossCartAmount += lineItem.gross;
       totalNetCartAmount += lineItem.net;
       return {
@@ -92,21 +92,21 @@ module.exports = ({ vippsOrderId }, vippsData) => {
           currency: currency,
           discounts: [
             {
-              percent: 0
-            }
+              percent: 0,
+            },
           ],
           tax: {
             name: lineItem.tax_group.name,
-            percent: lineItem.tax_group.percent
-          }
-        }
+            percent: lineItem.tax_group.percent,
+          },
+        },
       };
     });
 
     return {
       customer: {
         firstName: personalDetails.firstName,
-        lastName: personalDetails.lastName
+        lastName: personalDetails.lastName,
       },
       cart: orderItemsArray,
 
@@ -116,15 +116,15 @@ module.exports = ({ vippsOrderId }, vippsData) => {
         currency: currency,
         discounts: [
           {
-            percent: 0
-          }
+            percent: 0,
+          },
         ],
         tax: {
           name: lineItems[0].tax_group.name,
-          percent: lineItems[0].tax_group.percent
-        }
+          percent: lineItems[0].tax_group.percent,
+        },
       },
-      additionalInformation: JSON.stringify({ status: 'initiated' })
+      additionalInformation: JSON.stringify({ status: 'initiated' }),
     };
   }
 };

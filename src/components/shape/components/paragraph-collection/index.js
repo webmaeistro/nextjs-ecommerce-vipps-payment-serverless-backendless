@@ -18,7 +18,7 @@ const ParagraphCollection = ({ paragraphs }) => {
 };
 
 ParagraphCollection.propTypes = {
-  paragraphs: PropTypes.array.isRequired
+  paragraphs: PropTypes.array.isRequired,
 };
 
 export default ParagraphCollection;

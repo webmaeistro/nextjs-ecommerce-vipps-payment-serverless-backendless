@@ -11,13 +11,13 @@ import {
   Items,
   ItemOuter,
   BasketIsEmpty,
-  RemainingUntilFreeShipping
+  RemainingUntilFreeShipping,
 } from './styles';
 
 export const TinyBasket = ({
   hideTotals = false,
   hideRemainingUntilFreeShipping = false,
-  itemImageSizes
+  itemImageSizes,
 }) => {
   const { state, actions } = useBasket();
 
@@ -38,7 +38,7 @@ export const TinyBasket = ({
   return (
     <Outer>
       <Items>
-        {items.map(item => (
+        {items.map((item) => (
           <ItemOuter key={item.basketId} item={item}>
             <TinyBasketItem
               actions={actions}

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
-const speedSwitch = speed => {
+const speedSwitch = (speed) => {
   if (speed === 'fast') return 600;
   if (speed === 'slow') return 900;
   return 750;
@@ -17,7 +17,7 @@ const Svg = styled.svg`
   animation-name: ${animation};
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-duration: ${p => speedSwitch(p.speed)}ms;
+  animation-duration: ${(p) => speedSwitch(p.speed)}ms;
 `;
 
 export const Spinner = ({
@@ -58,7 +58,7 @@ Spinner.propTypes = {
   thickness: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8]),
   gap: PropTypes.oneOf([1, 2, 3, 4, 5]),
   speed: PropTypes.oneOf(['fast', 'slow']),
-  size: PropTypes.string
+  size: PropTypes.string,
 };
 
 Spinner.displayName = 'Spinner';

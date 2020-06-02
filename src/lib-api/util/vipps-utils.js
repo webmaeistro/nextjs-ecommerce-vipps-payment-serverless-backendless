@@ -1,17 +1,10 @@
 const {
-  VIPPS_USERNAME,
-  VIPPS_PASSWORD,
   VIPPS_API_URL,
   VIPPS_CLIENT_ID,
   VIPPS_CLIENT_SECRET,
   VIPPS_SUB_KEY,
-  VIPPS_SUB_KEY_SEC,
+  // VIPPS_SUB_KEY_SEC,
 } = process.env;
-
-const createAuthKey = () =>
-  Buffer.from(`${VIPPS_USERNAME}:${VIPPS_PASSWORD}`).toString('base64');
-
-const createSubKey = () => Buffer.from(`${VIPPS_SUB_KEY}`).toString('base64');
 
 export async function vippsAccessToken() {
   try {
@@ -32,12 +25,7 @@ export async function vippsAccessToken() {
   }
 }
 
-export async function vippsApiCall({
-  uri,
-  headers = {},
-  body,
-  method = 'POST',
-}) {
+export async function vippsApiCall({ uri, body, method = 'POST' }) {
   try {
     const { access_token } = await vippsAccessToken();
 

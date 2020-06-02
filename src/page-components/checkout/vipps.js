@@ -5,7 +5,7 @@ class StripeWrapper extends React.Component {
     super(props);
     this.state = {
       error: null,
-      loading: false
+      loading: false,
     };
   }
 
@@ -14,7 +14,7 @@ class StripeWrapper extends React.Component {
 
     const { personalDetails, items, currency } = this.props;
 
-    const lineItems = items.map(item => ({
+    const lineItems = items.map((item) => ({
       name: item.name,
       sku: item.sku,
       net: item.price,
@@ -25,7 +25,7 @@ class StripeWrapper extends React.Component {
       image_url: item.image.url,
       subscription: item.subscription,
       tax_group: item.taxGroup,
-      product_tax_amount: item.vatAmount
+      product_tax_amount: item.vatAmount,
     }));
 
     const response = await fetch('/api/vipps/initiate-payment', {
@@ -34,9 +34,9 @@ class StripeWrapper extends React.Component {
       body: JSON.stringify({
         personalDetails,
         currency,
-        lineItems
-      })
-    }).then(res => res.json());
+        lineItems,
+      }),
+    }).then((res) => res.json());
 
     this.setState({ loading: false });
 

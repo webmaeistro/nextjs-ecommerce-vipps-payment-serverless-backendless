@@ -12,7 +12,7 @@ import {
   Main,
   LoadingWrapper,
   SpinnerWrapper,
-  LoadingTextWrapper
+  LoadingTextWrapper,
 } from './styles';
 
 function Loader({ children }) {
@@ -33,7 +33,7 @@ export default function Layout({
   title,
   description,
   simple,
-  loading
+  loading,
 }) {
   return (
     <>

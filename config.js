@@ -15,8 +15,6 @@ const {
   KLARNA_USERNAME,
   KLARNA_PASSWORD,
   NGROK_URL,
-  KLARNA_API_URL = 'https://api.playground.klarna.com',
-
   VIPPS_API_URL = 'https://apitest.vipps.no',
   HOST_URL = 'http://localhost:3000',
 } = process.env;
@@ -38,7 +36,7 @@ global.__crystallizeConfig = {
   DEV,
   TERMS_URI,
   CHECKOUT_URI,
-  KLARNA_API_URL,
+  //KLARNA_API_URL,
   KLARNA_USERNAME,
   KLARNA_PASSWORD,
   NGROK_URL,

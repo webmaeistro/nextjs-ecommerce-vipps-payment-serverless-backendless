@@ -3,8 +3,8 @@ const {
   VIPPS_USERNAME,
   VIPPS_PASSWORD,
   VIPPS_API_URL,
-  VIPPS_MERCHANT_SERIAL,
-  NGROK_URL
+  // VIPPS_MERCHANT_SERIAL,
+  // NGROK_URL
 } = require('../../config.js');
 
 const createAuthKey = () =>
@@ -16,15 +16,15 @@ module.exports = async ({ uri, headers, body, method }) => {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Basic ${createAuthKey()}`,
-        ...headers
+        ...headers,
       },
       uri: `${VIPPS_API_URL}${uri}`,
       json: true,
       method,
-      body: body
+      body: body,
     };
     request(options)
-      .then(res => resolve(res))
-      .catch(err => reject(err));
+      .then((res) => resolve(res))
+      .catch((err) => reject(err));
   });
 };
