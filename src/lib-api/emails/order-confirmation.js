@@ -1,4 +1,3 @@
-/*
 import mjml2html from '@nerdenough/mjml-ncc-bundle';
 import sgMail from '@sendgrid/mail';
 
@@ -86,4 +85,3 @@ export default async function sendOrderConfirmation(orderId) {
     Promise.resolve(error.stack);
   }
 }
-*/
