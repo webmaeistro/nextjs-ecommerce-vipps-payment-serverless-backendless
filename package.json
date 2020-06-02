@@ -8,7 +8,7 @@
   },
   "repository": {
     "url": "https://github.com/webmaeistro/nextjs-ecommerce-vipps-express-payment.git",
-    "type": "git+https"
+    "type": "https"
   },
   "scripts": {
     "dev": "next dev",
