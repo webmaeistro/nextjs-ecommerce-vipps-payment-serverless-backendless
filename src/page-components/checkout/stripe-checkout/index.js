@@ -18,7 +18,7 @@ class StripeCheckout extends React.Component {
     postCode: '',
     cardElementStyle: null,
     error: null,
-    processing: false
+    processing: false,
   };
 
   constructor(props) {
@@ -37,7 +37,7 @@ class StripeCheckout extends React.Component {
       items,
       onSuccess,
       personalDetails,
-      stripe
+      stripe,
     } = this.props;
     const { firstName, lastName, email } = personalDetails;
     const { paymentIntent, error } = await stripe.handleCardPayment(
@@ -48,11 +48,11 @@ class StripeCheckout extends React.Component {
             name: `${firstName} ${lastName}`,
             address: {
               line1: address,
-              postal_code: postCode
-            }
-          }
+              postal_code: postCode,
+            },
+          },
         },
-        receipt_email: email
+        receipt_email: email,
       }
     );
 
@@ -62,19 +62,15 @@ class StripeCheckout extends React.Component {
 
     // Create order within Crystallize
     try {
-<<<<<<< HEAD:components/stripe-checkout/index.js
-      const response = await fetch('/api/order-persistence/stripe', {
-=======
       const response = await fetch('/api/stripe/order-persistence', {
->>>>>>> 4467efc8b28b33511b98c682887da93efe9ca211:src/page-components/checkout/stripe-checkout/index.js
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           paymentIntentId: paymentIntent.id,
-          lineItems: items.map(item => ({
+          lineItems: items.map((item) => ({
             name: item.name,
             sku: item.sku,
             net: item.price,
@@ -86,9 +82,9 @@ class StripeCheckout extends React.Component {
             subscription: item.subscription,
             tax_rate: item.taxGroup.percent,
             tax_group: item.taxGroup,
-            product_tax_amount: item.vatAmount
-          }))
-        })
+            product_tax_amount: item.vatAmount,
+          })),
+        }),
       });
 
       const { data } = await response.json();
@@ -105,8 +101,8 @@ class StripeCheckout extends React.Component {
 
     return this.setState({
       cardElementStyle: {
-        borderBottom: `1px solid ${borderColor}`
-      }
+        borderBottom: `1px solid ${borderColor}`,
+      },
     });
   }
 
@@ -116,7 +112,7 @@ class StripeCheckout extends React.Component {
       cardElementStyle,
       error,
       postCode,
-      processing
+      processing,
     } = this.state;
 
     return (
@@ -129,7 +125,7 @@ class StripeCheckout extends React.Component {
               type="text"
               placeholder="Street address"
               value={address}
-              onChange={e => this.setState({ address: e.target.value })}
+              onChange={(e) => this.setState({ address: e.target.value })}
               required
             />
           </InputGroup>
@@ -140,7 +136,7 @@ class StripeCheckout extends React.Component {
               type="text"
               placeholder="Postal code"
               value={postCode}
-              onChange={e => this.setState({ postCode: e.target.value })}
+              onChange={(e) => this.setState({ postCode: e.target.value })}
               required
             />
           </InputGroup>
@@ -150,11 +146,11 @@ class StripeCheckout extends React.Component {
             style={{
               base: {
                 color: colors.darkText,
-                fontSize: '16px'
+                fontSize: '16px',
               },
               invalid: {
-                color: colors.error
-              }
+                color: colors.error,
+              },
             }}
             onChange={this.handleCardChange}
           />

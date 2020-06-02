@@ -2,7 +2,7 @@
 const {
   NODE_ENV = 'development',
   COUNTRY_CODE = 'NO',
-  CRYSTALLIZE_TENANT_ID = 'teddy-bear-shop',
+  CRYSTALLIZE_TENANT_ID = 'orn-forlag',
   CRYSTALLIZE_API_URL = 'https://api.crystallize.com',
   CRYSTALLIZE_CORE_API_URL = 'https://pim.crystallize.com/graph/core',
   STRIPE_PUBLISHABLE_KEY,
@@ -10,15 +10,15 @@ const {
   MY_CRYSTALLIZE_SECRET_TOKEN,
   MY_CRYSTALLIZE_SECRET_TOKEN_ID,
   SENDGRID_API_KEY,
-  TERMS_URI = 'https://myeshopterms.com',
-  CHECKOUT_URI = 'https://myshopcheckout.com',
+  TERMS_URI = 'https://ornforlag.now.sh/salgsvilkar',
+  CHECKOUT_URI = 'https://ornforlag.now.sh/checkout',
   KLARNA_USERNAME,
   KLARNA_PASSWORD,
   NGROK_URL,
   KLARNA_API_URL = 'https://api.playground.klarna.com',
 
-  VIPPS_API_URL = 'https://api.playground.klarna.com',
-  HOST_URL = 'http://localhost:3000'
+  VIPPS_API_URL = 'https://apitest.vipps.no',
+  HOST_URL = 'http://localhost:3000',
 } = process.env;
 
 const DEV = NODE_ENV !== 'production';
@@ -43,7 +43,7 @@ global.__crystallizeConfig = {
   KLARNA_PASSWORD,
   NGROK_URL,
   VIPPS_API_URL,
-  HOST_URL
+  HOST_URL,
 };
 
 module.exports = global.__crystallizeConfig;
