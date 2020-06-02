@@ -77,8 +77,7 @@ export const PaymentMethods = styled.div`
 `;
 
 export const PaymentButton = styled.button`
-  /* ${(props) =>
-    `background: ${props.active ? colors.vippsOrange : 'white'}`}; */
+  /* ${(props) => `background: ${props.active ? colors : 'white'}`}; */
   background:${(p) => p.color};
   font-size: 18px;
   padding: 0.5rem;
