@@ -51,7 +51,7 @@ const orderToVippsBody = (
     transaction: {
       orderId: crystallizeOrderId,
       amount: totalCartAmount * 100, //Vipps stores int for transaction amount (2 decimals)
-      transactionText: 'Crystallize Boilerplate Test Transaction',
+      transactionText: 'Ørn forlag | Bok på nett, ornforlag.no',
     },
   };
 };
