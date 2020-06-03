@@ -2,7 +2,6 @@
 import { orderNormalizer } from 'lib-api/payment-providers/vipps';
 import { createCrystallizeOrder } from 'lib-api/crystallize/order';
 import getHost from 'lib-api/util/get-host';
-// eslint-disable-next-line no-unused-vars
 import { vippsApiCall, vippsAccessToken } from 'lib-api/util/vipps-utils';
 
 const { VIPPS_MERCHANT_SERIAL } = process.env;
@@ -42,7 +41,7 @@ const orderToVippsBody = (
         {
           isDefault: 'Y',
           priority: 0,
-          shippingCost: 99,
+          shippingCost: 10.0,
           shippingMethod: 'Posten Servicepakke',
           shippingMethodId: 'posten-servicepakke',
         },
@@ -52,7 +51,7 @@ const orderToVippsBody = (
     transaction: {
       orderId: crystallizeOrderId,
       amount: totalCartAmount * 100, //Vipps stores int for transaction amount (2 decimals)
-      transactionText: 'Ørn forlag | Kjøp av bok på ornforlag.no',
+      transactionText: 'Crystallize Boilerplate Test Transaction',
     },
   };
 };
@@ -60,7 +59,6 @@ const orderToVippsBody = (
 export default async (req, res) => {
   try {
     const { personalDetails, lineItems, currency } = req.body;
-    // eslint-disable-next-line no-unused-vars
     const { metadata } = req.body;
     const host = getHost(req);
 
