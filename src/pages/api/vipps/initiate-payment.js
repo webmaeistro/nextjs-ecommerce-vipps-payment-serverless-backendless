@@ -41,7 +41,7 @@ const orderToVippsBody = (
         {
           isDefault: 'Y',
           priority: 0,
-          shippingCost: 10.0,
+          shippingCost: 99.0,
           shippingMethod: 'Posten Servicepakke',
           shippingMethodId: 'posten-servicepakke',
         },
