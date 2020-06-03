@@ -1,7 +1,7 @@
 import Cmp, { getData } from 'page-components/index';
 
 export async function getStaticProps() {
-  const data = await getData({ asPath: '/' });
+  const data = await getData({ asPath: '/web-frontpage' });
 
   return {
     props: {
