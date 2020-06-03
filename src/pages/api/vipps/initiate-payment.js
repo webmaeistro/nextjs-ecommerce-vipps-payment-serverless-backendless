@@ -2,7 +2,7 @@
 import { orderNormalizer } from 'lib-api/payment-providers/vipps';
 import { createCrystallizeOrder } from 'lib-api/crystallize/order';
 import getHost from 'lib-api/util/get-host';
-import { vippsApiCall, vippsAccessToken } from 'lib-api/util/vipps-utils';
+import { vippsApiCall } from 'lib-api/util/vipps-utils';
 
 const { VIPPS_MERCHANT_SERIAL } = process.env;
 
@@ -59,6 +59,7 @@ const orderToVippsBody = (
 export default async (req, res) => {
   try {
     const { personalDetails, lineItems, currency } = req.body;
+    // eslint-disable-next-line no-unused-vars
     const { metadata } = req.body;
     const host = getHost(req);
 
