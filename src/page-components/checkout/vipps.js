@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
-class StripeWrapper extends React.Component {
+class VippsWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +13,7 @@ class StripeWrapper extends React.Component {
   async componentDidMount() {
     this.setState({ loading: true });
 
-    const { personalDetails, items, currency } = this.props;
+    const { personalDetails, items, currency, onSuccess } = this.props;
 
     const lineItems = items.map((item) => ({
       name: item.name,
@@ -38,14 +39,14 @@ class StripeWrapper extends React.Component {
       }),
     }).then((res) => res.json());
 
-    this.setState({ loading: false });
-
     // handle response
-    console.log(response);
+
+    return onSuccess(response.url);
   }
 
   render() {
-    const { loading, error } = this.state;
+    const { personalDetails, items, onSuccess } = this.props;
+    const { loading, error, url } = this.state;
 
     if (loading) {
       return <p>Loading...</p>;
@@ -55,8 +56,8 @@ class StripeWrapper extends React.Component {
       return <p>Unable to initialise Vipps payment!</p>;
     }
 
-    return <div id="vipps-checkout-container" />;
+    return url ? null : <div id="vipps-checkout-container" />;
   }
 }
 
-export default StripeWrapper;
+export default VippsWrapper;
