@@ -37,10 +37,8 @@ const BillingDetails = ({ order }) => {
             {order.customer.firstName} {order.customer.lastName}
           </strong>
         </p>
-        <p>
-          Epost: <strong>{order.customer.addresses[0]}</strong>
-        </p>
-        Leverings addresse: <strong>{order.customer.addresses[4]}</strong>
+        <p>Epost:</p>
+        Leverings addresse:
         <p>
           SUM totalt:{' '}
           <strong>
