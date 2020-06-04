@@ -1,19 +1,19 @@
+/* eslint-disable no-unused-vars */
 const {
-  // VIPPS_USERNAME,
-  // VIPPS_PASSWORD,
+  VIPPS_USERNAME,
+  VIPPS_PASSWORD,
   VIPPS_API_URL,
   VIPPS_CLIENT_ID,
   VIPPS_CLIENT_SECRET,
   VIPPS_SUB_KEY,
-  // VIPPS_SUB_KEY_SEC,
+  VIPPS_SUB_KEY_SEC,
 } = process.env;
 
-/*
 const createAuthKey = () =>
   Buffer.from(`${VIPPS_USERNAME}:${VIPPS_PASSWORD}`).toString('base64');
 
 const createSubKey = () => Buffer.from(`${VIPPS_SUB_KEY}`).toString('base64');
-*/
+
 export async function vippsAccessToken() {
   try {
     const response = await fetch(`${VIPPS_API_URL}/accessToken/get`, {
@@ -35,7 +35,6 @@ export async function vippsAccessToken() {
 
 export async function vippsApiCall({
   uri,
-  // eslint-disable-next-line no-unused-vars
   headers = {},
   body,
   method = 'POST',

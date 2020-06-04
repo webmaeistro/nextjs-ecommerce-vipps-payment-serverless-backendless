@@ -1,6 +1,6 @@
 import React from 'react';
 
-class VippsWrapper extends React.Component {
+class StripeWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,12 +12,12 @@ class VippsWrapper extends React.Component {
   async componentDidMount() {
     this.setState({ loading: true });
 
-    const { personalDetails, items, currency, onSuccess } = this.props;
+    const { personalDetails, items, currency } = this.props;
 
     const lineItems = items.map((item) => ({
       name: item.name,
       sku: item.sku,
-      net: item.price * item.quantity,
+      net: item.price,
       gross: item.priceWithoutVat,
       quantity: item.quantity,
       product_id: item.id,
@@ -38,27 +38,25 @@ class VippsWrapper extends React.Component {
       }),
     }).then((res) => res.json());
 
-    // handle response
+    this.setState({ loading: false });
 
-    return onSuccess(response.url);
+    // handle response
+    console.log(response);
   }
 
   render() {
-    // const { personalDetails, items, onSuccess } = this.props;
-    const { loading, error, url } = this.state;
+    const { loading, error } = this.state;
 
     if (loading) {
       return <p>Loading...</p>;
     }
 
     if (error) {
-      return (
-        <p>Obs her skjedde det noe som blokerte for starte Vipps betalingen!</p>
-      );
+      return <p>Unable to initialise Vipps payment!</p>;
     }
 
-    return url ? null : <div id="vipps-checkout-container" />;
+    return <div id="vipps-checkout-container" />;
   }
 }
 
-export default VippsWrapper;
+export default StripeWrapper;

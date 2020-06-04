@@ -63,7 +63,7 @@ module.exports = ({ vippsOrderId, vippsData }) => {
       },
       payment: [
         {
-          provider: 'Vipps',
+          provider: 'custom',
           custom: {
             properties: generateVippsProperties(vippsData),
           },
