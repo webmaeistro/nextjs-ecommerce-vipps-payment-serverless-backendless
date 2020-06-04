@@ -1,5 +1,6 @@
-import { updateCrystallizeOrder } from 'lib-api/crystallize/order';
-import { orderNormalizer } from 'lib-api/payment-providers/vipps';
+/* eslint-disable no-undef */
+//import { updateCrystallizeOrder } from 'lib-api/crystallize/order';
+//import { orderNormalizer } from 'lib-api/payment-providers/vipps';
 
 export default async (req, res) => {
   res.status(200).send('hello');
