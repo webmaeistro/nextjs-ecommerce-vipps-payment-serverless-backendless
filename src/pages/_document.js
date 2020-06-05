@@ -30,7 +30,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="no">
+      <html lang="nb">
         <Head>
           <meta
             name="viewport"

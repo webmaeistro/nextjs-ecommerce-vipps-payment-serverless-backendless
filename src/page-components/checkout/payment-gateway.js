@@ -6,10 +6,9 @@ import VippsCheckout from './vipps';
 
 import {
   Form,
-  /*  Input,
+  Input,
   InputGroup,
   Label,
-  */
   PaymentSelector,
   PaymentMethods,
   PaymentButton,
@@ -38,42 +37,48 @@ export default class PaymentGateway extends React.Component {
     firstName: '',
     lastName: '',
     email: '',
+    shippingAddress: '',
   };
 
   render() {
     const { items, currency } = this.props;
-    const { paymentMethod, firstName, lastName, email } = this.state;
+    const {
+      paymentMethod,
+      firstName,
+      lastName,
+      email,
+      shippingAddress,
+    } = this.state;
 
     const personalDetails = {
       firstName,
       lastName,
       email,
+      shippingAddress,
     };
 
     return (
       <Inner>
         <Form noValidate>
-          <Row>Husk å påse leverings addressen</Row>
+          <Row>Ørn forlag </Row>
           <Row>
-            Spørsmål eller ønsker du veiledning iht Vipps betalingen? -Ring
-            Bjørn på XXXXXXXX man-fre, kl.12-18:00
-            {/* <InputGroup>
-              <Label htmlFor="firstname"> First Name</Label>
+            <InputGroup>
+              <Label htmlFor="firstname"> Fornavn</Label>
               <Input
                 name="firstname"
                 type="text"
-                placeholder="First name"
+                placeholder="Ola"
                 value={firstName}
                 onChange={(e) => this.setState({ firstName: e.target.value })}
                 required
               />
             </InputGroup>
             <InputGroup>
-              <Label htmlFor="lastname"> Last Name</Label>
+              <Label htmlFor="lastname"> Etternavn</Label>
               <Input
                 name="lastname"
                 type="text"
-                placeholder="Last name"
+                placeholder="Nordmann"
                 value={lastName}
                 onChange={(e) => this.setState({ lastName: e.target.value })}
                 required
@@ -82,20 +87,34 @@ export default class PaymentGateway extends React.Component {
           </Row>
           <Row>
             <InputGroup>
-              <Label htmlFor="email"> Email</Label>
+              <Label htmlFor="email"> Epost</Label>
               <Input
                 name="email"
                 type="email"
-                placeholder="Email address"
+                placeholder="din@epost.com"
                 value={email}
                 onChange={(e) => this.setState({ email: e.target.value })}
                 required
               />
             </InputGroup>
-           */}
+          </Row>
+          <Row>
+            <InputGroup>
+              <Label htmlFor="shippingAddress"> Adresse:</Label>
+              <Input
+                name="shippingAddress"
+                type="text"
+                placeholder="storgata. 1, 2202 Oslo, Norway"
+                value={shippingAddress}
+                onChange={(e) =>
+                  this.setState({ shippingAddress: e.target.value })
+                }
+                required
+              />
+            </InputGroup>
           </Row>
 
-          <SectionHeader>Betal med Vipps hurtigkasse</SectionHeader>
+          <SectionHeader>Faktura medfølger pakken</SectionHeader>
           <PaymentMethods>
             <PaymentSelector>
               {/*}     <PaymentButton
@@ -122,7 +141,7 @@ export default class PaymentGateway extends React.Component {
                 onClick={() => this.setState({ paymentMethod: 'vipps' })}
               >
                 <img
-                  src="static/pay_with_vipps_rect_250_EN@2x.png"
+                  src="static/pay_with_vipps_rect_250_NO.png"
                   alt="Vipps logo"
                 />
               </PaymentButton>

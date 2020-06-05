@@ -58,7 +58,7 @@ export const TinyBasket = ({
           remainingUntilFreeShippingApplies > 0 && (
             <RemainingUntilFreeShipping>
               Legg til bøker verdi av{' '}
-              <CurrencyValue value={remainingUntilFreeShippingApplies} /> to til
+              <CurrencyValue value={remainingUntilFreeShippingApplies} /> til
               din ordre for å kvalifisere til gratis frakt.
             </RemainingUntilFreeShipping>
           )}

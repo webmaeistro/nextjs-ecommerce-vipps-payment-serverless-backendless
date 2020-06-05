@@ -49,11 +49,11 @@ class VippsWrapper extends React.Component {
     const { loading, error, url } = this.state;
 
     if (loading) {
-      return <p>Loading...</p>;
+      return <p>Kontaker Vipps....</p>;
     }
 
     if (error) {
-      return <p>Unable to initialise Vipps payment!</p>;
+      return <p>Får ikke til å opprette Vipps pbetaling!</p>;
     }
 
     return url ? null : <div id="vipps-checkout-container" />;

@@ -72,6 +72,7 @@ export default async (req, res) => {
   }
 
   return res.json({
-    message: 'Email sent! The verification link will expire in 1 hour',
+    message:
+      'Email sendt! Verifikasjons lenken er kunn gyldig i en time fra nå!',
   });
 };

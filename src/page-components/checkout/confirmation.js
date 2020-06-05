@@ -43,7 +43,7 @@ export default function Confirmation({ order: orderData }) {
   }));
 
   return (
-    <Layout title="Order Summary">
+    <Layout title="Bekreftelse på bestilling">
       <Outer>
         <CustomHeader>
           <H1>Betaling gjennomført!</H1>

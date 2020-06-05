@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colors } from 'ui';
-import { darken } from 'polished';
+//import { colors } from 'ui';
+//import { darken } from 'polished';
 
 export const Outer = styled.div`
   flex: 1 1 auto;

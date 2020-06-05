@@ -29,11 +29,11 @@ const Checkout = () => {
     <Outer>
       <Inner>
         <Container>
-          <SectionHeader>VippsHurtigkasse</SectionHeader>
+          <SectionHeader>Bestill på en vipps!</SectionHeader>
           <PaymentGateway items={items} currency={currency} />
         </Container>
         <Container>
-          <SectionHeader>Hurtigkurv</SectionHeader>
+          <SectionHeader>Handlekurv</SectionHeader>
           <OrderItems items={items} currency={currency} />
         </Container>
       </Inner>
@@ -43,7 +43,7 @@ const Checkout = () => {
 
 export default function CheckoutLoader(props) {
   return (
-    <Layout title="Betal med Vipps" simple>
+    <Layout title="Snart kan du betalte med Vipps" simple>
       <Head>
         {/* <script id="stripe-js" src="https://js.stripe.com/v3/" async />*/}
       </Head>
