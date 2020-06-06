@@ -47,12 +47,12 @@ export const Totals = () => {
           <span>Porto:</span>
           {freeShipping ? (
             <span>
-              {shipping && shipping.unit_price > 99 && (
+              {shipping && shipping.unit_price > 0 && (
                 <StrikeThrough>
                   <CurrencyValue value={shipping.unit_price} />
                 </StrikeThrough>
               )}{' '}
-              <CurrencyValue value="99" />
+              <CurrencyValue value="0" />
             </span>
           ) : (
             <span>
@@ -68,9 +68,7 @@ export const Totals = () => {
           </span>
         </Row>
         <Row modifier="to-pay">
-          <span>
-            <strong>SUM totalt</strong> å betale:
-          </span>
+          <span>Totalt å betale:</span>
           <span>
             <CurrencyValue value={totalToPay} />
           </span>

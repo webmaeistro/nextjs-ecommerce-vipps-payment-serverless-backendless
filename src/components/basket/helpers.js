@@ -2,7 +2,7 @@ export const animationSpeedMs = 300;
 
 export function getSupportedOptionsFromProps(props) {
   const {
-    freeShippingMinimumPurchaseAmount = 896,
+    freeShippingMinimumPurchaseAmount = -1,
     onEmpty,
     onAddToBasket,
     onRemoveFromBasket,
@@ -25,7 +25,7 @@ export const generateUniqueId = (function iife() {
 })();
 
 export function calculateTotals({ items, discount, options, shipping }) {
-  const { freeShippingMinimumPurchaseAmount = 896 } = options;
+  const { freeShippingMinimumPurchaseAmount = -1 } = options;
 
   const totalQuantity = items.reduce((acc, i) => acc + i.quantity, 0);
 
