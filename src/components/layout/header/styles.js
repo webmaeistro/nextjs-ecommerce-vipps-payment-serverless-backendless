@@ -138,13 +138,13 @@ export const NavActions = styled.div`
     padding: 5px 10px;
     font-size: 14px;
     font-weight: 500;
-    border: 1.4px solid ${colors.black};
+    border: 1.4px solid ${colors.vippsOrange};
     color: ${colors.black};
 
     cursor: pointer;
 
     &:hover {
-      background: ${colors.black};
+      background: ${colors.vippsOrange};
       color: #fff;
       text-decoration: none;
     }

@@ -32,7 +32,9 @@ const OrderItems = ({ items }) => (
           <ItemQuantity>
             {item.quantity} x <CurrencyValue value={item.price} />
           </ItemQuantity>
-          <ItemPrice>{item.price * item.quantity}</ItemPrice>
+          <ItemPrice>
+            <CurrencyValue value={item.price * item.quantity} />
+          </ItemPrice>
         </ItemAmount>
       </Item>
     ))}
