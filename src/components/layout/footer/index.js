@@ -19,19 +19,18 @@ export default function Footer() {
         </a>
       </Link>
       <br />
-      <p>
+      <div>
         {' '}
-        <adress>
-          <strong>Ørn forlag</strong> <br />
-          Veståsen 4<br />
-          1362, Hosle <br />
-          Norway
-        </adress>
-        <br />
-        <br />
+        <p>
+          <address>
+            <strong>Ørn forlag</strong> <br />
+            Veståsen 4<br />
+            1362, Hosle, Norge
+          </address>
+        </p>
         <strong>Org.nr.</strong>: 994304399 MVA <br />
         <strong>Kontonr.</strong>: 9235.27.10220
-      </p>
+      </div>
 
       <NavList>
         <h5>Meny</h5>

@@ -27,14 +27,14 @@ const Outer = styled.button.attrs((p) => ({
   display: inline-flex;
   border-radius: 0;
   border: none;
-  border: 2px solid ${colors.black};
+  border: 2px solid ${colors.vippsPurple};
   padding: 0;
   appearance: none;
   cursor: pointer;
   text-decoration: none;
 
   &:hover ${Inner} {
-    background: ${colors.black};
+    background: ${colors.vippsOrange};
     color: #fff;
   }
 

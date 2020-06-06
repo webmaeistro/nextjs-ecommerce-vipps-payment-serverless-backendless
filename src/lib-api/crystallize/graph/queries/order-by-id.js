@@ -9,7 +9,7 @@ export default `
           currency
         }
         payment {
-          ... on VippsPayment {
+          ... on StripePayment {
             paymentMethod
           }
         }

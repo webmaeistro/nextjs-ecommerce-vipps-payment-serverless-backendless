@@ -10,7 +10,7 @@ import { Basket, Header, Footer } from './styles';
 const CheckoutBtn = styled(Button)`
   width: 100%;
   margin: 20px 0;
-  border: 2px solid #000;
+  border: 2px solid #ff5b24;
   padding: 10px 20px;
   display: block;
   font-size: 16px;
@@ -18,7 +18,7 @@ const CheckoutBtn = styled(Button)`
   text-align: center;
 
   &:hover {
-    background: #000;
+    background: #ff5b24;
     color: #fff;
     text-decoration: none;
   }
@@ -52,7 +52,7 @@ export default function Aside() {
             disabled={!basket.state.items.length}
             onClick={onCheckoutClick}
           >
-            Gå til Vipps Hurtigkasse
+            Gå til hurtigkassen
           </CheckoutBtn>
         </Link>
       </Footer>

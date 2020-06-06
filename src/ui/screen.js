@@ -1,7 +1,7 @@
 // Screen sizes
 export const screen = new Proxy(
   {
-    xs: 500,
+    xs: 450,
     sm: 768,
     md: 1024,
     lg: 1600,

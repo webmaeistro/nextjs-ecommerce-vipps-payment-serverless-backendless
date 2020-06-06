@@ -37,24 +37,16 @@ export default class PaymentGateway extends React.Component {
     firstName: '',
     lastName: '',
     email: '',
-    shippingAddress: '',
   };
 
   render() {
     const { items, currency } = this.props;
-    const {
-      paymentMethod,
-      firstName,
-      lastName,
-      email,
-      shippingAddress,
-    } = this.state;
+    const { paymentMethod, firstName, lastName, email } = this.state;
 
     const personalDetails = {
       firstName,
       lastName,
       email,
-      shippingAddress,
     };
 
     return (
@@ -94,21 +86,6 @@ export default class PaymentGateway extends React.Component {
                 placeholder="din@epost.com"
                 value={email}
                 onChange={(e) => this.setState({ email: e.target.value })}
-                required
-              />
-            </InputGroup>
-          </Row>
-          <Row>
-            <InputGroup>
-              <Label htmlFor="shippingAddress"> Adresse:</Label>
-              <Input
-                name="shippingAddress"
-                type="text"
-                placeholder="storgata. 1, 2202 Oslo, Norway"
-                value={shippingAddress}
-                onChange={(e) =>
-                  this.setState({ shippingAddress: e.target.value })
-                }
                 required
               />
             </InputGroup>
