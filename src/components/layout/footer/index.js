@@ -21,13 +21,13 @@ export default function Footer() {
       <br />
       <div>
         {' '}
-        <p>
-          <address>
-            <strong>Ørn forlag</strong> <br />
-            Veståsen 4<br />
-            1362, Hosle, Norge
-          </address>
-        </p>
+        <address>
+          <strong>Ørn forlag</strong> <br />
+          Veståsen 4<br />
+          1362, Hosle, Norge
+        </address>
+        <br />
+        <br />
         <strong>Org.nr.</strong>: 994304399 MVA <br />
         <strong>Kontonr.</strong>: 9235.27.10220
       </div>

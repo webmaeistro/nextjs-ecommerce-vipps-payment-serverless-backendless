@@ -7,6 +7,8 @@ import OrderItems from 'components/order-items';
 import { H1, H3, Outer, Header, colors } from 'ui';
 
 import BillingDetails from './billing-details';
+//import { ItemName } from 'components/basket/tiny-basket/item/styles';
+import { ItemAmount } from 'components/order-items/styles';
 
 const CustomHeader = styled(Header)`
   margin-bottom: 0;
@@ -32,21 +34,21 @@ export default function Confirmation({ order: orderData }) {
   }, [emptied, basket.actions]);
 
   const order = orderData.data.orders.get;
-  //const { email } = order.customer.addresses[email];
+  // const { email } = order.customer.addresses[email];
 
   const items = order.cart.map((item) => ({
     ...item,
     image: {
       url: item.imageUrl,
     },
-    price: item.price.net,
+    price: item.price.net * ItemAmount + 99,
   }));
 
   return (
     <Layout title="Bekreftelse på bestilling">
       <Outer>
         <CustomHeader>
-          <H1>Betaling gjennomført!</H1>
+          <H1>Bekreftelse</H1>
           <p>
             Takk for kjøpet! Boksen er straks på vei i posten. Hvis du ønsker en
             kopi av denne kviteringen ta et skjermbilde eller print ut siden.

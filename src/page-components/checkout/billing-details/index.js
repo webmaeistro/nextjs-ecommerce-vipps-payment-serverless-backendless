@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { CurrencyValue } from 'components/currency-value';
 import { responsive, H3 } from 'ui';
+import { ItemQuantity } from 'components/order-items/styles';
 
 const Outer = styled.div`
   width: 300px;
@@ -25,7 +26,7 @@ const Inner = styled.div`
 
 const BillingDetails = ({ order }) => {
   // eslint-disable-next-line no-unused-vars
-  //const { email } = order.customer.addresses[email];
+  const { email } = order.customer.addresses[email];
   return (
     <Outer>
       <Inner>
@@ -42,7 +43,7 @@ const BillingDetails = ({ order }) => {
         <p>
           SUM totalt:{' '}
           <strong>
-            <CurrencyValue value={order.total.net} />
+            <CurrencyValue value={order.total.net * ItemQuantity + 99} />
           </strong>
         </p>
       </Inner>

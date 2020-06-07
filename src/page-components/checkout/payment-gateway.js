@@ -6,9 +6,11 @@ import VippsCheckout from './vipps';
 
 import {
   Form,
+  /*
   Input,
   InputGroup,
   Label,
+  */
   PaymentSelector,
   PaymentMethods,
   PaymentButton,
@@ -34,25 +36,27 @@ const Inner = styled.div`
 export default class PaymentGateway extends React.Component {
   state = {
     paymentMethod: null,
-    firstName: '',
+    /*    firstName: '',
     lastName: '',
     email: '',
+    */
   };
 
   render() {
     const { items, currency } = this.props;
-    const { paymentMethod, firstName, lastName, email } = this.state;
-
+    const { paymentMethod } = this.state;
+    //                       ^firstName, lastName, email
     const personalDetails = {
-      firstName,
-      lastName,
-      email,
+      //    firstName,
+      //   lastName,
+      //    email,
     };
 
     return (
       <Inner>
         <Form noValidate>
           <Row>Ørn forlag </Row>
+          {/*}
           <Row>
             <InputGroup>
               <Label htmlFor="firstname"> Fornavn</Label>
@@ -90,7 +94,7 @@ export default class PaymentGateway extends React.Component {
               />
             </InputGroup>
           </Row>
-
+    */}
           <SectionHeader>Faktura medfølger pakken</SectionHeader>
           <PaymentMethods>
             <PaymentSelector>

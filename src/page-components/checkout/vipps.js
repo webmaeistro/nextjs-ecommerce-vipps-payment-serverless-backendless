@@ -45,7 +45,7 @@ class VippsWrapper extends React.Component {
   }
 
   render() {
-    const { personalDetails, items, onSuccess } = this.props;
+    // const { personalDetails, items, onSuccess } = this.props;
     const { loading, error, url } = this.state;
 
     if (loading) {
@@ -53,7 +53,7 @@ class VippsWrapper extends React.Component {
     }
 
     if (error) {
-      return <p>Får ikke til å opprette Vipps pbetaling!</p>;
+      return <p>Får ikke til å opprette Vipps payment!</p>;
     }
 
     return url ? null : <div id="vipps-checkout-container" />;
