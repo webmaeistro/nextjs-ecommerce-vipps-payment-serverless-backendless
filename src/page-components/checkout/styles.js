@@ -81,7 +81,7 @@ export const PaymentButton = styled.button`
   background:${(p) => p.color};
   font-size: 18px;
   padding: 0.5rem;
-  width: 32%;
+  width: auto;
   margin-right:1%;
   height: 80px;
   border-radius: 10px;
