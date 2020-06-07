@@ -19,7 +19,7 @@ export const Img = styled(Image)`
   > img {
     display: block;
     object-fit: contain;
-    object-position: center;
+    object-position: right;
     width: 100%;
     height: 100%;
   }
@@ -28,9 +28,9 @@ export const Img = styled(Image)`
 export const Title = styled(H3)`
   font-size: 2.5rem;
   text-transform: uppercase;
-  color: ${colors.black};
+  color: ${colors.vippsBlack};
   font-weight: 900;
-  font-family: 'Vipps Text', 'sans-serif';
+  font-family: 'Vipps Display', 'sans-serif';
 `;
 
 export const Text = styled.div`
@@ -41,7 +41,7 @@ export const Text = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1em;
+  padding: 0.5em;
 `;
 
 export const Price = styled.span`
@@ -53,7 +53,7 @@ export const Price = styled.span`
 
 export const Outer = styled.a`
   position: relative;
-  background: ${colors.grey};
+  background: ${colors.light};
   height: 100%;
   display: flex;
   padding: 0 50px;
@@ -64,7 +64,7 @@ export const Outer = styled.a`
 
   button {
     margin: 0 auto;
-    min-width: 250px;
+    min-width: 200px;
     max-width: 80%;
   }
 

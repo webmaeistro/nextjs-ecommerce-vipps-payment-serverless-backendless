@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import DocumentItem from 'components/items/document-item';
 import { CurrencyValue } from 'components/currency-value';
-import { screen } from 'ui';
+import { screen, Button } from 'ui';
 //        Button^
 import { Outer, Text, ImageWrapper, Img, Price, Title } from './styles';
 
@@ -30,11 +30,13 @@ export default function GridItem({ data, gridCell }) {
     image = i;
     text = (
       <div>
+        <Title>{name}</Title>
         <Price>
           <CurrencyValue value={price} />
         </Price>
-        <Title>{name}</Title>
-        {/*<Button>Kjøp</Button> */}
+        <br />
+        <br />
+        <Button>Bestill nå!</Button>
       </div>
     );
   }

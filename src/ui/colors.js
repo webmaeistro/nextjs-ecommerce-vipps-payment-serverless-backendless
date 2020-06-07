@@ -14,8 +14,13 @@ export const colors = new Proxy(
     darkText: '#161225',
     price: '#FF5B24',
     vippsRust: '#9B3716',
-    VippsBlue: '59CBE8',
+    VippsBlue: '#59CBE8',
     vippsSignalpurple: '#5E3DC2',
+    OrangeShade060: '#FF985F',
+    OrangeShade020: '#FFD3BB',
+    GrayShade003: '#FCFBFE',
+    GrayShade005: '#F6F6F9',
+    PurpleShade020: '#C9C6D7',
   },
   {
     get: function (obj, prop) {
