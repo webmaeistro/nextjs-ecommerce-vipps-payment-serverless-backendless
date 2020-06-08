@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import { CurrencyValue } from 'components/currency-value';
 import { responsive, H3 } from 'ui';
-import { ItemQuantity } from 'components/order-items/styles';
 
 const Outer = styled.div`
   width: 300px;
@@ -37,13 +36,11 @@ const BillingDetails = ({ order }) => {
             {order.customer.firstName} {order.customer.lastName}
           </strong>
         </p>
-        <p>
-          Leverings addresse: <strong>{order.customer.shippingAddress}</strong>
-        </p>
+        <p>Leverings addresse:</p>
         <p>
           SUM totalt:{' '}
           <strong>
-            <CurrencyValue value={order.total.net * ItemQuantity + 99} />
+            <CurrencyValue value={order.total.net} />
           </strong>
         </p>
       </Inner>

@@ -7,8 +7,6 @@ import OrderItems from 'components/order-items';
 import { H1, H3, Outer, Header, colors } from 'ui';
 
 import BillingDetails from './billing-details';
-//import { ItemName } from 'components/basket/tiny-basket/item/styles';
-import { ItemAmount } from 'components/order-items/styles';
 
 const CustomHeader = styled(Header)`
   margin-bottom: 0;
@@ -41,7 +39,7 @@ export default function Confirmation({ order: orderData }) {
     image: {
       url: item.imageUrl,
     },
-    price: item.price.net * ItemAmount + 99,
+    price: item.price.net,
   }));
 
   return (

@@ -44,7 +44,13 @@ export default async (req, res) => {
       customer: {
         ...customer,
         identifier: customerIdentifier,
-        addresses: [{ type: 'delivery', street: customerAddress }],
+        addresses: [
+          {
+            type: 'delivery',
+            street: customerAddress,
+            ...customer,
+          },
+        ],
       },
       cart: orderItemsArray,
 

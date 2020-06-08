@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-import IconLogo from 'ui/icons/logo';
+import IconNextjs from 'ui/icons/nextjs';
 import { useSettings } from 'components/settings-context';
 
 import { Outer, Logo, NavList, Powered } from './styles';
+import IconLogo from 'ui/icons/logo';
 
 export default function Footer() {
   const { mainNavigation } = useSettings();
@@ -31,7 +32,6 @@ export default function Footer() {
         <strong>Org.nr.</strong>: 994304399 MVA <br />
         <strong>Kontonr.</strong>: 9235.27.10220
       </div>
-
       <NavList>
         <h5>Meny</h5>
         {mainNavigation.map((category) => (
@@ -43,11 +43,24 @@ export default function Footer() {
         ))}
       </NavList>
       <Powered>
-        <p>Nettside av </p>
+        <p>Nettside av: </p>
         <a href="https://github.com/webmaeistro/" aria-label="Martin-Andersen">
-          <IconLogo size={5} />
+          Martin Andersen
         </a>
       </Powered>
+      <br />
+      <Powered>
+        <p></p>
+        <a href="https://crystallize.com" aria-label="Crystallize">
+          <IconLogo size={2} />
+        </a>{' '}
+        <a href="https://nextjs.org/" aria-label="NextJs">
+          <IconNextjs size={2} />
+        </a>
+      </Powered>
+      <br />
+      <br />
+      <Powered>&copy; 2020 - Ørn forlag.</Powered>
     </Outer>
   );
 }
