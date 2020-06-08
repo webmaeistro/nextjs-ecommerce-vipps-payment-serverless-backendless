@@ -26,8 +26,10 @@ export default function Footer() {
           <strong>Ørn forlag</strong> <br />
           Veståsen 4<br />
           1362, Hosle, Norge
+          <br />
+          <br />
+          <strong>Tlf.:</strong> (+47) 909 60 404
         </address>
-        <br />
         <br />
         <strong>Org.nr.</strong>: 994304399 MVA <br />
         <strong>Kontonr.</strong>: 9235.27.10220
