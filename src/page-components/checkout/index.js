@@ -7,7 +7,9 @@ import Layout from 'components/layout';
 import OrderItems from 'components/order-items';
 import { Outer } from 'ui';
 
-import PaymentGateway from './payment-gateway';
+// import PaymentGateway from './payment-gateway';
+import ReserveGateway from './reserve-gateway';
+
 import { Inner, SectionHeader, Container } from './styles';
 
 const Checkout = () => {
@@ -29,8 +31,9 @@ const Checkout = () => {
     <Outer>
       <Inner>
         <Container>
-          <SectionHeader>Bestill på en vipps!</SectionHeader>
-          <PaymentGateway items={items} currency={currency} />
+          {/* <SectionHeader>Bestill på en vipps!</SectionHeader> */}
+          <SectionHeader>Bestill</SectionHeader>
+          <ReserveGateway items={items} currency={currency} />
         </Container>
         <Container>
           <SectionHeader>Handlekurv</SectionHeader>
