@@ -48,6 +48,7 @@ export default async (req, res) => {
           {
             type: 'delivery',
             street: customerAddress,
+            email: customerIdentifier,
             ...customer,
           },
         ],
