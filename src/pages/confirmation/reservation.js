@@ -28,7 +28,7 @@ export default function ReservationConfirmation() {
     <Layout>
       <Outer>
         <CustomHeader>
-          <H1>Takk for din bestilling</H1>
+          <H1>Takk for din bestilling!</H1>
           <div style={{ marginTop: 30 }}>
             Ditt ordernummer er: <Line />
             <H3>
@@ -39,7 +39,14 @@ export default function ReservationConfirmation() {
             <br />
           </div>
           <Line />
-          Du mottar bok/bøkene og faktura i løpet av få dager.
+          Du mottar bok/bøkene og faktura i løpet av få dager. <br />
+          Hvis du har spørsmål til eller problemer med bestillingen,
+          <br /> kontakt Ørn forlags kundeservice på tlf.:
+          <phone>
+            <strong>(+47) 975 96 088</strong>
+          </phone>
+          eller torgunn.andersen@ornforlag.no <br />
+          <br /> Mvh, <br /> Bjørn Olav Tveit, forlagssjef
         </CustomHeader>
       </Outer>
     </Layout>

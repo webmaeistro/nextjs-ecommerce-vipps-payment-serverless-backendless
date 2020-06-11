@@ -8,6 +8,8 @@ export default async (req, res) => {
     customer: {
       email: customerIdentifier,
       address: customerAddress,
+      postalCode: customerPostalCode,
+      city: customerCity,
       ...customer
     },
     items,
@@ -48,6 +50,8 @@ export default async (req, res) => {
           {
             type: 'delivery',
             street: customerAddress,
+            postalCode: customerPostalCode,
+            city: customerCity,
             email: customerIdentifier,
             ...customer,
           },
