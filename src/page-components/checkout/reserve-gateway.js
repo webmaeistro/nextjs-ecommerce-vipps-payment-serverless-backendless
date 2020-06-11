@@ -34,8 +34,10 @@ export default function ReserveGateway({ items, currency }) {
           customer: {
             firstName: values.get('firstName'),
             lastName: values.get('lastName'),
-            email: values.get('email'),
             address: values.get('address'),
+            postalCode: values.get('postalCode'),
+            city: values.get('city'),
+            email: values.get('email'),
           },
           items,
           currency,
@@ -74,21 +76,28 @@ export default function ReserveGateway({ items, currency }) {
       </Row>
       <Row>
         <InputGroup>
+          <Label htmlFor="address">Adresse</Label>
+          <Textarea name="address" placeholder="Eksempelgata 1" required />
+        </InputGroup>
+      </Row>
+      <Row>
+        <InputGroup>
+          <Label htmlFor="postalCode">Postnr.</Label>
+          <Input name="postalCode" type="number" placeholder="2201" required />
+        </InputGroup>
+        <InputGroup>
+          <Label htmlFor="city">Poststed</Label>
+          <Input name="city" type="text" placeholder="Oslo" required />
+        </InputGroup>
+      </Row>
+
+      <Row>
+        <InputGroup>
           <Label htmlFor="email">Epost</Label>
           <Input
             name="email"
             type="email"
             placeholder="din@epost.com"
-            required
-          />
-        </InputGroup>
-      </Row>
-      <Row>
-        <InputGroup>
-          <Label htmlFor="address">Adresse</Label>
-          <Textarea
-            name="address"
-            placeholder="Eksempelgata 1, 1234 Eksempelby"
             required
           />
         </InputGroup>
