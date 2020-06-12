@@ -8,8 +8,8 @@ import Layout from 'components/layout';
 import OrderItems from 'components/order-items';
 import { Outer, H3 } from 'ui';
 import { Row, Rows, StrikeThrough } from 'components/basket/totals/styles';
-// import PaymentGateway from './payment-gateway';
-import ReserveGateway from './reserve-gateway';
+import PaymentGateway from './payment-gateway';
+//import ReserveGateway from './reserve-gateway';
 
 import { Inner, SectionHeader, Container } from './styles';
 
@@ -33,9 +33,9 @@ const Checkout = () => {
     <Outer>
       <Inner>
         <Container>
-          {/* <SectionHeader>Bestill på en vipps!</SectionHeader> */}
-          <SectionHeader>Bestill</SectionHeader>
-          <ReserveGateway items={items} currency={currency} />
+          <SectionHeader>Bestill på en vipps!</SectionHeader>
+          {/*<SectionHeader>Bestill</SectionHeader> */}
+          <PaymentGateway items={items} currency={currency} />
         </Container>
         <Container>
           <SectionHeader>Handlekurv</SectionHeader>
