@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-//import { useAuth } from 'components/auth-context';
+import { useAuth } from 'components/auth-context';
 import { useSettings } from 'components/settings-context';
 
 import BurgerButton from './burger-button';
@@ -10,6 +10,7 @@ import { Outer, Nav, Logo, NavActions, NavList, NavListItem } from './styles';
 
 export default function Header({ simple }) {
   const { mainNavigation } = useSettings();
+  const auth = useAuth();
 
   const [navOpen, setNavOpen] = useState(false);
 
@@ -34,7 +35,7 @@ export default function Header({ simple }) {
         </NavList>
       </Nav>
       <NavActions open={navOpen}>
-        {/*}    {auth.isLoggedIn ? (
+        {auth.isLoggedIn ? (
           <button type="button" onClick={auth.logout}>
             Logout
           </button>
@@ -43,7 +44,6 @@ export default function Header({ simple }) {
             <a>Login</a>
           </Link>
         )}
-        */}
       </NavActions>
       <BasketButton />
       <BurgerButton active={navOpen} onClick={() => setNavOpen(!navOpen)} />

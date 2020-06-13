@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+            sheet.collectStyles(<App {...props} />)
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        )
       };
     } finally {
       sheet.seal();
@@ -38,10 +38,8 @@ export default class MyDocument extends Document {
           />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css?family=VippsDisplay:300,400,700|Roboto+Slab:700&display=swap"
-            as="fetch"
-            crossOrigin="anonymous"
+            href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@300;400;700&display=swap"
+            rel="stylesheet"
           />
           <link
             rel="apple-touch-icon"

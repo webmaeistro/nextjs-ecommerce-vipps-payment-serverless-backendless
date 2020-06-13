@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { responsive, colors } from 'ui';
 
 const Outer = styled.button.attrs(() => ({
-  type: 'button',
+  type: 'button'
 }))`
   appearance: none;
   display: none;
@@ -26,7 +26,7 @@ const Outer = styled.button.attrs(() => ({
 const Lines = styled.div`
   width: 100%;
   position: absolute;
-  background: ${(p) => (p.open ? 'transparent' : colors.black)};
+  background: ${(p) => (p.open ? 'transparent' : 'var(--color-text-main)')};
   height: 4px;
   top: 50%;
   margin-top: -2px;

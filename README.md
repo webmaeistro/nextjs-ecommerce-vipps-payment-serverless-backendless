@@ -1,6 +1,7 @@
-# Nextjs Ecommerce Vipps Hurtigkasse Crystallize GraphQL for ornforlag.no
+# Crystallize NextJS Boilerplate
 
-[![React: latest][0]][1] [![Next: latest][2]][3] [![code style: prettier][4]][5]
+[![Crystallize Community Slack][21]][22] [![React: latest][0]][1]
+[![Next: latest][2]][3] [![code style: prettier][4]][5]
 [![code linter: Eslint][6]][7]
 
 The bare minimum skeleton you need to get a frontend up and running on the
@@ -78,7 +79,12 @@ and [Platform.sh][23]
 ### Deploying with Vercel
 
 - Register a Vercel account
+<<<<<<< HEAD
 - Run `yarn vercel` or `npm run vercel`
+=======
+- Install vercel `yarn global add vercel` or `npm i -g vercel`
+- Run `vercel`
+>>>>>>> upstream/vipps
 
 [0]: https://img.shields.io/badge/react-latest-44cc11.svg?style=flat-square
 [1]: https://github.com/facebook/react
@@ -90,8 +96,28 @@ and [Platform.sh][23]
 [6]:
   https://img.shields.io/badge/code_linter-eslint-463fd4.svg?style=flat-square
 [7]: https://github.com/prettier/prettier
+<<<<<<< HEAD
 [18]: https://vercel.com/docs/v2/serverless-functions/introduction
 [19]: https://vercel.com/guides/deploying-nextjs-with-now/
 [20]: https://vercel.com
+=======
+[8]: https://crystallize.com/product
+[9]: https://crystallize.com/product/product-information-management
+[10]: https://crystallize.com
+[11]: https://crystallize.com/developers
+[12]: https://crystallize.com/blog/frontend-performance-measuring-kpis
+[13]: https://crystallize.com/product/product-information-management
+[14]: https://crystallize.com/blog/ecommerce-seo-checklist
+[15]:
+  https://crystallize.com/blog/content-rich-storytelling-makes-juicy-ecommerce
+[16]:
+  https://snowball.digital/blog/content-strategy-for-exponential-growth-marketing
+[17]: https://github.com/crystallizeapi/crystallize-cli
+[18]: https://vercel.com/docs/v2/serverless-functions/introduction
+[19]: https://vercel.com/guides/deploying-nextjs-with-now/
+[20]: https://vercel.com
+[21]:
+  https://img.shields.io/static/v1?label=Slack&logo=slack&message=Crystallize%20Community&color=68d1b7
+>>>>>>> upstream/vipps
 [22]: https://slack.com
 [23]: https://platform.sh

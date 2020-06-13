@@ -1,7 +1,9 @@
 import React from 'react';
-//import Router from 'next/router';
+import Router from 'next/router';
 import styled from 'styled-components';
 
+import StripeCheckout from './stripe';
+import KlarnaCheckout from './klarna';
 import VippsCheckout from './vipps';
 
 import {
@@ -15,7 +17,7 @@ import {
   PaymentMethods,
   PaymentButton,
   PaymentMethod,
-  SectionHeader,
+  SectionHeader
 } from './styles';
 
 const Row = styled.div`
@@ -35,7 +37,7 @@ const Inner = styled.div`
 
 export default class PaymentGateway extends React.Component {
   state = {
-    paymentMethod: null,
+    paymentMethod: null
     /*    firstName: '',
     lastName: '',
     email: '',
@@ -56,7 +58,7 @@ export default class PaymentGateway extends React.Component {
       <Inner>
         <Form noValidate>
           <Row>Ørn forlag </Row>
-          {/*}
+          {/*
           <Row>
             <InputGroup>
               <Label htmlFor="firstname"> Fornavn</Label>
@@ -94,11 +96,12 @@ export default class PaymentGateway extends React.Component {
               />
             </InputGroup>
           </Row>
-    */}
-          <SectionHeader>Faktura medfølger pakken</SectionHeader>
+          */}
+          <SectionHeader>Choose payment method</SectionHeader>
           <PaymentMethods>
             <PaymentSelector>
-              {/*}     <PaymentButton
+              {/* 
+              <PaymentButton
                 color="#6773E6"
                 type="button"
                 active={paymentMethod === 'stripe'}
@@ -114,7 +117,7 @@ export default class PaymentGateway extends React.Component {
               >
                 <img src="/static/klarna-logo.png" alt="Klarna logo" />
               </PaymentButton>
-    */}
+         */}
               <PaymentButton
                 color="#FF5B24"
                 type="button"
@@ -127,7 +130,7 @@ export default class PaymentGateway extends React.Component {
                 />
               </PaymentButton>
             </PaymentSelector>
-            {/*
+
             {paymentMethod === 'stripe' && (
               <PaymentMethod>
                 <StripeCheckout
@@ -153,7 +156,6 @@ export default class PaymentGateway extends React.Component {
                 />
               </PaymentMethod>
             )}
-            */}
             {paymentMethod === 'vipps' && (
               <PaymentMethod>
                 <VippsCheckout

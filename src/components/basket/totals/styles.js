@@ -20,7 +20,7 @@ export const Row = styled.div`
     font-weight: 600;
     text-align: right;
 
-    opacity: ${p => (p.hideValue ? '0' : '1')};
+    opacity: ${(p) => (p.hideValue ? '0' : '1')};
   }
 `;
 

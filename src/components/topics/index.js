@@ -7,7 +7,7 @@ export default function Topics({ topicMaps }) {
     return null;
   }
 
-  return topicMaps?.map(topic => (
+  return topicMaps?.map((topic) => (
     <TopicMap key={topic.name}>
       <List>{topic.items.edges.map(({ node }) => items(node))}</List>
     </TopicMap>

@@ -23,7 +23,7 @@ const Properties = styled.table`
   td {
     width: 50%;
     padding: 1em 0;
-    border: 0px solid ${colors.light};
+    border: 0px solid var(--color-main-background);
   }
 
   tr:not(:first-child) td {

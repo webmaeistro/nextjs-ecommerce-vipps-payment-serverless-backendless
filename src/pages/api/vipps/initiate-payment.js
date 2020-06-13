@@ -2,20 +2,21 @@
 import { orderNormalizer } from 'lib-api/payment-providers/vipps';
 import { createCrystallizeOrder } from 'lib-api/crystallize/order';
 import getHost from 'lib-api/util/get-host';
-import { vippsApiCall } from 'lib-api/util/vipps-utils';
+import { getClient } from 'lib-api/payment-providers/vipps';
 
-const { VIPPS_MERCHANT_SERIAL } = process.env;
+// eslint-disable-next-line no-undef
+const { VIPPS_MERCHANT_SERIAL, NGROK_URL } = config;
 
 const orderToVippsCart = (lineItems) => {
   let totalCartAmount = 0;
 
   for (const item of lineItems) {
-    totalCartAmount += item.net;
+    totalCartAmount += item.net * item.quantity;
   }
 
   return {
     cart: lineItems,
-    totalCartAmount: totalCartAmount,
+    totalCartAmount: totalCartAmount
   };
 };
 
@@ -23,36 +24,37 @@ const orderToVippsBody = (
   orderDetails,
   lineItems,
   personalDetails,
-  crystallizeOrderId,
-  host
+  crystallizeOrderId
 ) => {
   const { totalCartAmount } = orderToVippsCart(lineItems);
-
+  const shippingCost = 0;
   return {
     merchantInfo: {
       merchantSerialNumber: VIPPS_MERCHANT_SERIAL,
-      callbackPrefix: `${host}/api/vipps/order-persistence`,
-      shippingDetailsPrefix: host,
-      fallBack: `${host}/confirmation/vipps/${crystallizeOrderId}`,
-      consentRemovalPrefix: `${host}/consent`,
+      callbackPrefix: `${NGROK_URL}/api/order-persistence/vipps`,
+      shippingDetailsPrefix: NGROK_URL,
+      consentRemovalPrefix: NGROK_URL,
       paymentType: 'eComm Express Payment',
-      isApp: false,
+      fallBack: NGROK_URL,
+      isApp: false
+    },
+    customerInfo: {
+      mobileNumber: personalDetails.phone
+    },
+    transaction: {
+      orderId: crystallizeOrderId,
+      amount: totalCartAmount,
+      transactionText: 'Ørn forlag | Bok kjøp utført fra ornforlag.no',
       staticShippingDetails: [
         {
           isDefault: 'Y',
           priority: 0,
-          shippingCost: 99.0,
+          shippingCost: shippingCost,
           shippingMethod: 'Posten Servicepakke',
-          shippingMethodId: 'posten-servicepakke',
-        },
-      ],
-    },
-    customerInfo: {},
-    transaction: {
-      orderId: crystallizeOrderId,
-      amount: totalCartAmount * 100, //Vipps stores int for transaction amount (2 decimals)
-      transactionText: 'Ørn forlag | Bok på nett, ornforlag.no',
-    },
+          shippingMethodId: 'posten-servicepakke'
+        }
+      ]
+    }
   };
 };
 
@@ -64,30 +66,28 @@ export default async (req, res) => {
     const host = getHost(req);
 
     const validCrystallizeOrder = orderNormalizer({
-      vippsData: { lineItems, currency, personalDetails },
+      vippsData: { lineItems, currency, personalDetails }
     });
 
     const createCrystallizeOrderResponse = await createCrystallizeOrder(
       validCrystallizeOrder
     );
 
-    const vippsResponse = await vippsApiCall({
-      uri: '/ecomm/v2/payments',
-      body: orderToVippsBody(
+    // eslint-disable-next-line no-unused-vars
+    const vippsResponse = await getClient().initiatePayment({
+      order: orderToVippsBody(
         req.body,
         lineItems,
         personalDetails,
         createCrystallizeOrderResponse.data.orders.create.id,
         host
-      ),
+      )
     });
-
-    return res.send(vippsResponse);
   } catch (error) {
     console.log(error);
-    return res.status(503).send({
+    return res.json({
       success: false,
-      error: error.stack,
+      error: error.stack
     });
   }
 };

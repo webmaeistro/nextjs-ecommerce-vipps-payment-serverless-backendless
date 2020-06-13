@@ -19,16 +19,16 @@ import ProdPage, { getData as getDataProd } from 'page-components/product';
 const typesMap = {
   document: {
     component: DocPage,
-    getData: getDataDoc,
+    getData: getDataDoc
   },
   folder: {
     component: FolderPage,
-    getData: getDataFolder,
+    getData: getDataFolder
   },
   product: {
     component: ProdPage,
-    getData: getDataProd,
-  },
+    getData: getDataProd
+  }
 };
 
 export async function getStaticProps({ params }) {
@@ -48,8 +48,8 @@ export async function getStaticProps({ params }) {
       `,
       variables: {
         language,
-        path: asPath,
-      },
+        path: asPath
+      }
     });
     const { type } = getItemType.data.catalogue;
 
@@ -60,8 +60,9 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         ...data,
-        type,
+        type
       },
+      unstable_revalidate: 1
     };
   } catch (error) {
     console.error(error);
@@ -70,7 +71,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {},
-    unstable_revalidate: 1,
+    unstable_revalidate: 1
   };
 }
 
@@ -120,8 +121,8 @@ export async function getStaticPaths() {
         }
       `,
       variables: {
-        language: getLanguage(),
-      },
+        language: getLanguage()
+      }
     });
 
     allCatalogueItems.data.catalogue.children.forEach(handleItem);
@@ -132,7 +133,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: false
   };
 }
 

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-import { colors } from './colors';
 import { responsive } from './responsive';
-
+import { colors } from './colors';
 export const H1 = styled.h1`
   margin: 0 0 15px;
   font-size: 3rem;
@@ -15,7 +14,7 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-  color: ${colors.black};
+  color: var(--color-text-main);
   font-size: 2rem;
   margin: 1rem 0;
 

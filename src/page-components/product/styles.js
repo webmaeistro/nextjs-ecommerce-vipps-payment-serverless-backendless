@@ -43,8 +43,8 @@ export const Content = styled.div`
 `;
 export const Specs = styled.div`
   flex: 0 0 500px;
-  border-left: 15px solid #fff;
-  background: ${colors.grey};
+  border-left: 15px solid var(--color-main-background);
+  background: var(--color-box-background);
   ${responsive.xs} {
     border-left: 0;
     display: block;
@@ -52,10 +52,11 @@ export const Specs = styled.div`
     padding: 20px 0;
   }
 `;
+
 export const Description = styled.div`
-  color: ${colors.darkText};
+  color: var(--color-text-sub);
   flex: 0 1 100%;
-  background: ${colors.grey};
+  background: var(--color-box-background);
   padding: 5rem 0;
   h2:empty {
     display: none;

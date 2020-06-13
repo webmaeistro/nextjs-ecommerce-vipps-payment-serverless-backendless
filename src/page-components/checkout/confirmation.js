@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Layout from 'components/layout';
 import { useBasket } from 'components/basket';
 import OrderItems from 'components/order-items';
-import { H1, H3, Outer, Header, colors } from 'ui';
+import { H1, H3, Outer, Header } from 'ui';
 
 import BillingDetails from './billing-details';
 
@@ -16,7 +16,7 @@ const CustomHeader = styled(Header)`
 const Line = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid ${colors.light};
+  border-bottom: 1px solid var(--color-main-background);
 `;
 
 export default function Confirmation({ order: orderData }) {
@@ -32,14 +32,14 @@ export default function Confirmation({ order: orderData }) {
   }, [emptied, basket.actions]);
 
   const order = orderData.data.orders.get;
-  // const { email } = order.customer.addresses[email];
+  const { email } = order.customer.addresses[email];
 
   const items = order.cart.map((item) => ({
     ...item,
     image: {
-      url: item.imageUrl,
+      url: item.imageUrl
     },
-    price: item.price.net,
+    price: item.price.net
   }));
 
   return (
@@ -51,6 +51,7 @@ export default function Confirmation({ order: orderData }) {
             Takk for kjøpet! Boksen er straks på vei i posten. Hvis du ønsker en
             kopi av denne kviteringen ta et skjermbilde eller print ut siden.
             Kjøpet er også lagret i historikk i betalinger på din Vipps app.
+            {email}
           </p>
           <Line />
           <BillingDetails order={order} />

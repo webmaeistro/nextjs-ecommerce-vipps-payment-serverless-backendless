@@ -47,13 +47,13 @@ export const Text = styled.div`
 export const Price = styled.span`
   color: inherit;
   font-size: 1.5rem;
-  color: ${colors.price};
+  color: var(--color-price);
   font-weight: bold;
 `;
 
 export const Outer = styled.a`
   position: relative;
-  background: ${colors.light};
+  background: var(--color-box-background);
   height: 100%;
   display: flex;
   padding: 0 50px;

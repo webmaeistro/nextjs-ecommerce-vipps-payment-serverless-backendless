@@ -1,19 +1,18 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 
-class VippsWrapper extends React.Component {
+class StripeWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
-      loading: false,
+      loading: false
     };
   }
 
   async componentDidMount() {
     this.setState({ loading: true });
 
-    const { personalDetails, items, currency, onSuccess } = this.props;
+    const { personalDetails, items, currency } = this.props;
 
     const lineItems = items.map((item) => ({
       name: item.name,
@@ -26,7 +25,7 @@ class VippsWrapper extends React.Component {
       image_url: item.image.url,
       subscription: item.subscription,
       tax_group: item.taxGroup,
-      product_tax_amount: item.vatAmount,
+      product_tax_amount: item.vatAmount
     }));
 
     const response = await fetch('/api/vipps/initiate-payment', {
@@ -35,29 +34,29 @@ class VippsWrapper extends React.Component {
       body: JSON.stringify({
         personalDetails,
         currency,
-        lineItems,
-      }),
+        lineItems
+      })
     }).then((res) => res.json());
 
-    // handle response
+    this.setState({ loading: false });
 
-    return onSuccess(response.url);
+    // handle response
+    console.log(response);
   }
 
   render() {
-    // const { personalDetails, items, onSuccess } = this.props;
-    const { loading, error, url } = this.state;
+    const { loading, error } = this.state;
 
     if (loading) {
-      return <p>Kontaker Vipps....</p>;
+      return <p>Loading...</p>;
     }
 
     if (error) {
-      return <p>Får ikke til å opprette Vipps payment!</p>;
+      return <p>Unable to initialise Vipps payment!</p>;
     }
 
-    return url ? null : <div id="vipps-checkout-container" />;
+    return <div id="vipps-checkout-container" />;
   }
 }
 
-export default VippsWrapper;
+export default StripeWrapper;

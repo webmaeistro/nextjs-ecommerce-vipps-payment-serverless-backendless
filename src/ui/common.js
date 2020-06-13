@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from './colors';
 import { responsive } from './responsive';
 
 export const Outer = styled.div`
@@ -33,10 +32,10 @@ export const Header = styled.div`
   }
 
   p {
-    text-align: ${(p) => (p.centerContent ? 'center !important' : 'under')};
+    text-align: ${(p) => (p.centerContent ? 'center !important' : 'left')};
     font-size: 18px;
     line-height: 1.8rem;
-    color: ${colors.darkText};
+    color: var(--color-text-sub);
     margin: 0;
   }
 `;

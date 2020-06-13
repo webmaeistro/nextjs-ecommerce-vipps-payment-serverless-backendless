@@ -1,5 +1,4 @@
 {
     "editor.formatOnSave": true,
-    "standard.enable": false,
-    "npm-scripts.showStartNotification": false
+    "standard.enable": false
 }

@@ -1,5 +1,3 @@
-import { IntlProvider } from 'react-intl';
-
 import { AuthProvider } from 'components/auth-context';
 import { SettingsProvider } from 'components/settings-context';
 import { BasketProvider } from 'components/basket';
@@ -15,16 +13,14 @@ function MyApp({ Component, pageProps, commonData }) {
       currency={tenant.defaults.currency}
       mainNavigation={mainNavigation}
     >
-      <IntlProvider locale={language}>
-        <AuthProvider>
-          <BasketProvider
-            shippingCost={199}
-            freeShippingMinimumPurchaseAmount={800}
-          >
-            <Component {...pageProps} />
-          </BasketProvider>
-        </AuthProvider>
-      </IntlProvider>
+      <AuthProvider>
+        <BasketProvider
+          shippingCost={199}
+          freeShippingMinimumPurchaseAmount={800}
+        >
+          <Component {...pageProps} />
+        </BasketProvider>
+      </AuthProvider>
     </SettingsProvider>
   );
 }
@@ -41,8 +37,8 @@ MyApp.getInitialProps = async function ({ router: { asPath } }) {
     const {
       data: {
         tenant,
-        mainNavigation: { children: mainNavigation },
-      },
+        mainNavigation: { children: mainNavigation }
+      }
     } = await simplyFetchFromGraph({
       query: `
         query COMMON_DATA($language: String!) {
@@ -64,16 +60,16 @@ MyApp.getInitialProps = async function ({ router: { asPath } }) {
         }
       `,
       variables: {
-        language,
-      },
+        language
+      }
     });
 
     return {
       commonData: {
         language,
         tenant,
-        mainNavigation: mainNavigation.filter((i) => !i.name.startsWith('_')),
-      },
+        mainNavigation: mainNavigation.filter((i) => !i.name.startsWith('_'))
+      }
     };
   } catch (error) {
     console.error(error);
@@ -87,10 +83,10 @@ MyApp.getInitialProps = async function ({ router: { asPath } }) {
         tenant: {
           defaults: {
             language: 'nb',
-            currency: 'nok',
-          },
-        },
-      },
+            currency: 'nok'
+          }
+        }
+      }
     };
   }
 };

@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 import CrystallizeImage from '@crystallize/react-image';
-import { colors } from 'ui';
+
 import { animationSpeedMs } from '../../helpers';
 
 const animationItemHighlight = keyframes`
@@ -69,7 +69,7 @@ export const ItemInfo = styled.span`
 export const ItemInfoText = styled.div``;
 
 export const ItemImage = styled(CrystallizeImage).attrs(() => ({
-  sizes: '50px',
+  sizes: '50px'
 }))`
   width: 50px;
   img {
@@ -106,7 +106,7 @@ export const PriceWrapper = styled.div`
   font-size: 16px;
   padding: 5px 10px 0 0;
   margin: 4px 0;
-  color: ${colors.black};
+  color: var(--color-text-main);
 `;
 export const PriceWrap = styled.div`
   display: flex;
