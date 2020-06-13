@@ -10,13 +10,11 @@ const {
   MY_CRYSTALLIZE_SECRET_TOKEN,
   MY_CRYSTALLIZE_SECRET_TOKEN_ID,
   SENDGRID_API_KEY,
-  TERMS_URI = 'https://ornforlag.now.sh/salgsvilkar',
-  CHECKOUT_URI = 'https://ornforlag.now.sh/checkout',
-  KLARNA_USERNAME,
-  KLARNA_PASSWORD,
-  NGROK_URL,
-  VIPPS_API_URL = 'https://apitest.vipps.no',
-  HOST_URL = 'http://localhost:3000'
+  //TERMS_URI = 'https://ornforlag.no/salgsvilkar',
+  //CHECKOUT_URI = 'https://ornforlag.no/checkout',
+  HOST_URL = 'https://localhost:3000',
+  //NGROK_URL = 'http://7b3011557bd6.ngrok.io',
+  VIPPS_API_URL = 'https://apitest.vipps.no'
 } = process.env;
 
 const DEV = NODE_ENV !== 'production';
@@ -34,14 +32,10 @@ global.__crystallizeConfig = {
   MY_CRYSTALLIZE_SECRET_TOKEN_ID,
   STRIPE_PUBLISHABLE_KEY,
   DEV,
-  TERMS_URI,
-  CHECKOUT_URI,
-  //KLARNA_API_URL,
-  KLARNA_USERNAME,
-  KLARNA_PASSWORD,
-  NGROK_URL,
-  VIPPS_API_URL,
-  HOST_URL
+
+  HOST_URL,
+
+  VIPPS_API_URL
 };
 
 module.exports = global.__crystallizeConfig;
