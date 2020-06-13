@@ -62,6 +62,7 @@ export async function getStaticProps({ params }) {
         ...data,
         type,
       },
+      unstable_revalidate: 1,
     };
   } catch (error) {
     console.error(error);
