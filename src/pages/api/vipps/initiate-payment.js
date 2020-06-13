@@ -1,26 +1,22 @@
 /* eslint-disable no-underscore-dangle */
-const config = require('../../../config');
-// eslint-disable-next-line no-unused-vars
-const vippsApiCall = require('../../../lib/util/vipps-utils');
-const normallizer = require('../../../lib/normalizers/vipps');
-const {
-  persistCrystallizeOrder,
-} = require('../../../lib/crystallize-order-handler');
+import { orderNormalizer } from 'lib-api/payment-providers/vipps';
+import { createCrystallizeOrder } from 'lib-api/crystallize/order';
+import getHost from 'lib-api/util/get-host';
+import { getClient } from 'lib-api/payment-providers/vipps';
 
+// eslint-disable-next-line no-undef
 const { VIPPS_MERCHANT_SERIAL, NGROK_URL } = config;
 
 const orderToVippsCart = (lineItems) => {
   let totalCartAmount = 0;
 
-  const cartItems = lineItems.map((item) => {
-    totalCartAmount += item.product_tax_amount;
-
-    return item;
-  });
+  for (const item of lineItems) {
+    totalCartAmount += item.net * item.quantity;
+  }
 
   return {
-    cart: cartItems,
-    totalCartAmount: totalCartAmount,
+    cart: lineItems,
+    totalCartAmount: totalCartAmount
   };
 };
 
@@ -31,7 +27,7 @@ const orderToVippsBody = (
   crystallizeOrderId
 ) => {
   const { totalCartAmount } = orderToVippsCart(lineItems);
-
+  const shippingCost = 0;
   return {
     merchantInfo: {
       merchantSerialNumber: VIPPS_MERCHANT_SERIAL,
@@ -40,25 +36,25 @@ const orderToVippsBody = (
       consentRemovalPrefix: NGROK_URL,
       paymentType: 'eComm Express Payment',
       fallBack: NGROK_URL,
-      isApp: false,
+      isApp: false
     },
     customerInfo: {
-      mobileNumber: personalDetails.phone,
+      mobileNumber: personalDetails.phone
     },
     transaction: {
       orderId: crystallizeOrderId,
       amount: totalCartAmount,
-      transactionText: 'Crystallize Boilerplate Test Transaction',
+      transactionText: 'Ørn forlag | Bok kjøp utført fra ornforlag.no',
       staticShippingDetails: [
         {
           isDefault: 'Y',
           priority: 0,
-          shippingCost: 0,
-          shippingMethod: 'Free delivery',
-          shippingMethodId: 'free-delivery',
-        },
-      ],
-    },
+          shippingCost: shippingCost,
+          shippingMethod: 'Posten Servicepakke',
+          shippingMethodId: 'posten-servicepakke'
+        }
+      ]
+    }
   };
 };
 
@@ -67,32 +63,31 @@ export default async (req, res) => {
     const { personalDetails, lineItems, currency } = req.body;
     // eslint-disable-next-line no-unused-vars
     const { metadata } = req.body;
-    const mutationBody = normallizer(
-      {},
-      { lineItems, currency, personalDetails }
+    const host = getHost(req);
+
+    const validCrystallizeOrder = orderNormalizer({
+      vippsData: { lineItems, currency, personalDetails }
+    });
+
+    const createCrystallizeOrderResponse = await createCrystallizeOrder(
+      validCrystallizeOrder
     );
 
-    const { data } = await persistCrystallizeOrder(mutationBody);
-
-    // await vippsApiCall({
-    //     method: 'POST',
-    //     uri: '/ecomm/v2/payments',
-    //     body: orderToVippsBody(req.body, lineItems)
-    //   });
-    console.log(data.orders.create.id);
-    return res.send({
-      body: orderToVippsBody(
+    // eslint-disable-next-line no-unused-vars
+    const vippsResponse = await getClient().initiatePayment({
+      order: orderToVippsBody(
         req.body,
         lineItems,
         personalDetails,
-        data.orders.create.id
-      ),
+        createCrystallizeOrderResponse.data.orders.create.id,
+        host
+      )
     });
   } catch (error) {
     console.log(error);
     return res.json({
       success: false,
-      error: error.stack,
+      error: error.stack
     });
   }
 };
