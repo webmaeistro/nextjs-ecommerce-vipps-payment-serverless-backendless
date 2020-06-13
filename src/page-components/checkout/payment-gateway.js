@@ -100,7 +100,7 @@ export default class PaymentGateway extends React.Component {
           <SectionHeader>Choose payment method</SectionHeader>
           <PaymentMethods>
             <PaymentSelector>
-              {/* 
+              
               <PaymentButton
                 color="#6773E6"
                 type="button"
@@ -109,9 +109,8 @@ export default class PaymentGateway extends React.Component {
               >
                 <img src="/static/stripe-logo.png" alt="stripe logo" />
               </PaymentButton>
-              go" />
-              </PaymentButton>
-         */}
+              
+             
               <PaymentButton
                 color="#FF5B24"
                 type="button"
