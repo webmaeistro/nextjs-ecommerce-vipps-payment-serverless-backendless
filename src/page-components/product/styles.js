@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colors, responsive, H1 } from 'ui';
+import { responsive, H1 } from 'ui';
 
 export const Outer = styled.div`
   max-width: 1600px;
@@ -21,7 +21,7 @@ export const Loader = styled.div`
 export const Sections = styled.div`
   display: flex;
   align-items: center;
-  background: ${colors.vippsWhite};
+  background: #FFFFFF;
   padding: 39px;
   flex-direction: row-reverse;
   justify-content: center;
@@ -116,7 +116,7 @@ export const Name = styled(H1)`
 `;
 
 export const Summary = styled.div`
-  color: ${colors.darkText};
+  color: --color-box-background;
   font-size: 18px;
   line-height: 1.4;
   margin-bottom: 15px;
@@ -140,7 +140,7 @@ export const ProductFooter = styled.div`
 
 export const Price = styled.div`
   text-align: center;
-  color: ${colors.vippsPurple};
+  color:--color-box-background;
   font-size: 30px;
   margin-right: 20px;
 
