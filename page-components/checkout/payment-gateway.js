@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { responsive, H3 } from 'ui';
 import StripeCheckout from './stripe';
-import KlarnaCheckout from './klarna';
+
 import VippsCheckout from './vipps';
 
 import {
@@ -132,14 +132,7 @@ class PaymentGateway extends React.Component {
                 >
                   <img src="/static/stripe-logo.png" alt="stripe logo" />
                 </PaymentButton>
-                <PaymentButton
-                  color="#F8AEC2"
-                  type="button"
-                  active={paymentMethod === 'klarna'}
-                  onClick={() => this.setState({ paymentMethod: 'klarna' })}
-                >
-                  <img src="/static/klarna-logo.png" alt="Klarna logo" />
-                </PaymentButton>
+
                 <PaymentButton
                   color="#FFFFFF"
                   type="button"
@@ -167,15 +160,6 @@ class PaymentGateway extends React.Component {
               {paymentMethod === 'vipps' && (
                 <PaymentMethod>
                   <VippsCheckout
-                    personalDetails={personalDetails}
-                    items={items}
-                    currency={currency}
-                  />
-                </PaymentMethod>
-              )}
-              {paymentMethod === 'klarna' && (
-                <PaymentMethod>
-                  <KlarnaCheckout
                     personalDetails={personalDetails}
                     items={items}
                     currency={currency}

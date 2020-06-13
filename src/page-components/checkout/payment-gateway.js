@@ -3,7 +3,7 @@ import Router from 'next/router';
 import styled from 'styled-components';
 
 import StripeCheckout from './stripe';
-import KlarnaCheckout from './klarna';
+
 import VippsCheckout from './vipps';
 
 import {
@@ -109,13 +109,7 @@ export default class PaymentGateway extends React.Component {
               >
                 <img src="/static/stripe-logo.png" alt="stripe logo" />
               </PaymentButton>
-              <PaymentButton
-                color="#F8AEC2"
-                type="button"
-                active={paymentMethod === 'klarna'}
-                onClick={() => this.setState({ paymentMethod: 'klarna' })}
-              >
-                <img src="/static/klarna-logo.png" alt="Klarna logo" />
+              go" />
               </PaymentButton>
          */}
               <PaymentButton
@@ -147,15 +141,6 @@ export default class PaymentGateway extends React.Component {
               </PaymentMethod>
             )}
 
-            {paymentMethod === 'klarna' && (
-              <PaymentMethod>
-                <KlarnaCheckout
-                  personalDetails={personalDetails}
-                  items={items}
-                  currency={currency}
-                />
-              </PaymentMethod>
-            )}
             {paymentMethod === 'vipps' && (
               <PaymentMethod>
                 <VippsCheckout
