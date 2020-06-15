@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import videojs from 'video.js';
-import 'dashjs';
-import 'videojs-contrib-dash';
 
 import playerCss from './player-css';
 
