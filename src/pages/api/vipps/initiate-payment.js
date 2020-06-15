@@ -4,8 +4,7 @@ import { createCrystallizeOrder } from 'lib-api/crystallize/order';
 import getHost from 'lib-api/util/get-host';
 import { getClient } from 'lib-api/payment-providers/vipps';
 
-// eslint-disable-next-line no-undef
-const { VIPPS_MERCHANT_SERIAL, NGROK_URL } = config;
+const { VIPPS_MERCHANT_SERIAL } = process.env;
 
 const orderToVippsCart = (lineItems) => {
   let totalCartAmount = 0;
@@ -24,27 +23,20 @@ const orderToVippsBody = (
   orderDetails,
   lineItems,
   personalDetails,
-  crystallizeOrderId
+  crystallizeOrderId,
+  host
 ) => {
   const { totalCartAmount } = orderToVippsCart(lineItems);
-  const shippingCost = 0;
+  const shippingCost = 99;
   return {
     merchantInfo: {
       merchantSerialNumber: VIPPS_MERCHANT_SERIAL,
-      callbackPrefix: `${NGROK_URL}/api/order-persistence/vipps`,
-      shippingDetailsPrefix: NGROK_URL,
-      consentRemovalPrefix: NGROK_URL,
+      callbackPrefix: `${host}/api/vipps/order-persistence`,
+      shippingDetailsPrefix: host,
+      fallBack: `${host}/confirmation/vipps/${crystallizeOrderId}`,
+      consentRemovalPrefix: `${host}/consent`,
       paymentType: 'eComm Express Payment',
-      fallBack: NGROK_URL,
-      isApp: false
-    },
-    customerInfo: {
-      mobileNumber: personalDetails.phone
-    },
-    transaction: {
-      orderId: crystallizeOrderId,
-      amount: totalCartAmount,
-      transactionText: 'Ørn forlag | Bok kjøp utført fra ornforlag.no',
+      isApp: false,
       staticShippingDetails: [
         {
           isDefault: 'Y',
@@ -54,6 +46,12 @@ const orderToVippsBody = (
           shippingMethodId: 'posten-servicepakke'
         }
       ]
+    },
+    customerInfo: {},
+    transaction: {
+      orderId: crystallizeOrderId,
+      amount: totalCartAmount * 100, //Vipps stores int for transaction amount (2 decimals)
+      transactionText: 'Ørn forlag | netthandel transaksjon fra ornforlag.no'
     }
   };
 };
@@ -73,7 +71,6 @@ export default async (req, res) => {
       validCrystallizeOrder
     );
 
-    // eslint-disable-next-line no-unused-vars
     const vippsResponse = await getClient().initiatePayment({
       order: orderToVippsBody(
         req.body,
@@ -83,9 +80,11 @@ export default async (req, res) => {
         host
       )
     });
+
+    return res.send(vippsResponse);
   } catch (error) {
     console.log(error);
-    return res.json({
+    return res.status(503).send({
       success: false,
       error: error.stack
     });
