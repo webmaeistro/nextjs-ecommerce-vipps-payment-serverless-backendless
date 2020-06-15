@@ -1,6 +1,6 @@
 import React from 'react';
 
-class StripeWrapper extends React.Component {
+class VippsWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,4 +59,4 @@ class StripeWrapper extends React.Component {
   }
 }
 
-export default StripeWrapper;
+export default VippsWrapper;
