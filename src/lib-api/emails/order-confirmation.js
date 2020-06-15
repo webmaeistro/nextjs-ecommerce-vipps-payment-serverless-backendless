@@ -76,7 +76,7 @@ export default async function sendOrderConfirmation(orderId) {
       sgMail.setApiKey(SENDGRID_API_KEY);
       await sgMail.send({
         to: email,
-        from: 'bjorn@ornforlag.no',
+        from: 'webmaster@ornforlag.no',
         subject: 'Bok transaksjons kvitering fra ornforlag.no',
         html,
       });
