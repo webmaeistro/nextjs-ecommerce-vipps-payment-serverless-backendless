@@ -59,7 +59,7 @@ export default async (req, res) => {
     sgMail.setApiKey(sendGridApiKey);
     await sgMail.send({
       to: email,
-      from: 'bjorn@ornforlag.no',
+      from: 'webmaster@ornforlag.no',
       subject: 'Magisk link',
       html,
     });
