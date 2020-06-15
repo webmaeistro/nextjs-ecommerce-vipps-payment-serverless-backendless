@@ -12,8 +12,8 @@ const {
   SENDGRID_API_KEY,
   //TERMS_URI = 'https://ornforlag.no/salgsvilkar',
   //CHECKOUT_URI = 'https://ornforlag.no/checkout',
-  HOST_URL = 'https://localhost:3000',
-  //NGROK_URL = 'http://7b3011557bd6.ngrok.io',
+  HOST_URL = 'http://localhost:3000',
+  NGROK_URL = 'http://7b3011557bd6.ngrok.io',
   VIPPS_API_URL = 'https://apitest.vipps.no'
 } = process.env;
 
@@ -32,7 +32,7 @@ global.__crystallizeConfig = {
   MY_CRYSTALLIZE_SECRET_TOKEN_ID,
   STRIPE_PUBLISHABLE_KEY,
   DEV,
-
+  NGROK_URL,
   HOST_URL,
 
   VIPPS_API_URL

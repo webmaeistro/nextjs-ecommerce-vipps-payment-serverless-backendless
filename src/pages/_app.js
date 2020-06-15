@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps, commonData }) {
     >
       <AuthProvider>
         <BasketProvider
-          shippingCost={199}
+          shippingCost={99}
           freeShippingMinimumPurchaseAmount={800}
         >
           <Component {...pageProps} />
