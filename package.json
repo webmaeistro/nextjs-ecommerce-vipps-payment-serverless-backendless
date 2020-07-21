@@ -1,6 +1,6 @@
 {
   "name": "nextjs-ecommerce-vipps-express-payment",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "license": "MIT",
   "author": "Martin Andersen <marander@protonmail.com> (@webmaeistro)",
   "engines": {
@@ -41,7 +41,7 @@
     "@sendgrid/mail": "^6.4.0",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.17",
     "mjml": "^4.4.1",
     "next": "^9.4.1",
     "polished": "^3.6.3",
